@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Портфолио Данияра Насирова</title>
+<meta name="description" content="Портфолио геймдизайнера Данияра Насирова: Domain Monsters, Верфь, Вердигри — спецификации, баланс, скриншоты.">
+<meta property="og:title" content="Портфолио Данияра Насирова">
+<meta property="og:description" content="Геймдизайнер (core): три прототипа со спецификациями, данными баланса и скриншотами.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://lilbonner.github.io/portfolio/img/dm-battle.jpg">
+<meta property="og:url" content="https://lilbonner.github.io/portfolio/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B2%3C/text%3E%3C/svg%3E">
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&display=swap">
+<style>
+  :root {
+    --paper: #f3f4f1;
+    --paper-2: #fafbf8;
+    --doc: #eaeee9;
+    --ink: #15191b;
+    --ink-2: #4b5559;
+    --ink-3: #737d81;
+    --rule: #d6dbd5;
+    --accent: #0b6b66;
+    --accent-soft: rgba(11, 107, 102, 0.09);
+    --band: rgba(11, 107, 102, 0.12);
+    --s1: #2a78d6;
+    --s2: #eb6834;
+    --good: #1d7a3a;
+    --display: "Unbounded", "Arial Black", "Segoe UI", sans-serif;
+    --body: "Golos Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", "Cascadia Mono", Consolas, "Courier New", monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #111416;
+      --paper-2: #171b1e;
+      --doc: #1a2023;
+      --ink: #e8ecea;
+      --ink-2: #aab3b6;
+      --ink-3: #808a8e;
+      --rule: #2a3134;
+      --accent: #5dbdb5;
+      --accent-soft: rgba(93, 189, 181, 0.12);
+      --band: rgba(93, 189, 181, 0.14);
+      --s1: #3987e5;
+      --s2: #d95926;
+      --good: #4fbf73;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #111416;
+    --paper-2: #171b1e;
+    --doc: #1a2023;
+    --ink: #e8ecea;
+    --ink-2: #aab3b6;
+    --ink-3: #808a8e;
+    --rule: #2a3134;
+    --accent: #5dbdb5;
+    --accent-soft: rgba(93, 189, 181, 0.12);
+    --band: rgba(93, 189, 181, 0.14);
+    --s1: #3987e5;
+    --s2: #d95926;
+    --good: #4fbf73;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+    padding-inline: 20px;
+    padding-block: 0 64px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  .mono { font-family: var(--mono); }
+
+  /* ---------- Header ---------- */
+  .top {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+    padding-block: 20px; border-bottom: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink-3);
+  }
+  .top nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .top nav a { color: var(--ink-2); text-decoration: none; }
+  .top nav a:hover { color: var(--accent); }
+
+  .intro { padding-block: 48px 40px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+  .eyebrow { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .intro h1 { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 5.6vw, 58px); line-height: 1.02; letter-spacing: -0.01em; }
+  .thesis { margin-top: 20px; font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 34em; }
+  .contact { display: grid; gap: 10px; font-size: 15px; }
+  .contact div { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+  .contact dt { font-family: var(--mono); font-size: 12px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
+  .contact dd { margin: 0; }
+
+  .ledger { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+  .ledger div { padding: 16px 16px 16px 0; }
+  .ledger div + div { padding-left: 16px; border-left: 1px solid var(--rule); }
+  .ledger b { display: block; font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .ledger span { display: block; margin-top: 6px; font-size: 13.5px; color: var(--ink-2); line-height: 1.4; }
+  .team-note { margin-top: 14px; font-size: 14px; color: var(--ink-3); }
+
+  /* ---------- Project ---------- */
+  .project { padding-top: 72px; }
+  .p-head { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: start; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
+  .p-tag { font-family: var(--mono); font-size: 12.5px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+  .p-head h2 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 40px); line-height: 1.05; margin-top: 10px; }
+  .p-head .lede { margin-top: 12px; font-size: 17px; color: var(--ink-2); max-width: 36em; }
+  .facts { display: grid; gap: 0; margin: 0; font-size: 14px; }
+  .facts div { display: grid; grid-template-columns: 7em 1fr; gap: 12px; padding-block: 7px; border-bottom: 1px solid var(--rule); }
+  .facts div:first-child { border-top: 1px solid var(--rule); }
+  .facts dt { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
+  .facts dd { margin: 0; }
+
+  .media { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin-top: 26px; }
+  .media .side { display: grid; gap: 14px; align-content: start; }
+  figure { margin: 0; }
+  figure img { display: block; width: 100%; height: auto; border-radius: 4px; background: var(--doc); }
+  figcaption { margin-top: 8px; font-family: var(--mono); font-size: 11.5px; line-height: 1.5; color: var(--ink-3); }
+  figcaption .kind { color: var(--accent); }
+
+  .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 36px; margin-top: 40px; align-items: start; }
+  h3 { font-family: var(--mono); font-weight: 500; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .did { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .did li { padding-left: 18px; position: relative; max-width: 36em; }
+  .did li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 2px; background: var(--accent); }
+  .did b { font-weight: 600; }
+
+  /* Spec excerpt: looks like a page from the design doc */
+  .spec { background: var(--doc); border: 1px solid var(--rule); border-radius: 4px; padding: 18px 20px 20px; font-size: 14.5px; }
+  .spec + .spec { margin-top: 14px; }
+  .spec-id { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--rule); }
+  .spec-id b { color: var(--accent); font-weight: 500; }
+  .spec p + p, .spec p + .tbl, .spec .tbl + p, .spec pre + p, .spec p + pre { margin-top: 10px; }
+  .spec pre { margin: 0; font-family: var(--mono); font-size: 12.5px; line-height: 1.6; white-space: pre-wrap; color: var(--ink); }
+  .spec q { quotes: "«" "»"; }
+  .tbl { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 7px 10px 7px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-family: var(--mono); font-weight: 500; font-size: 11.5px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.05em; }
+  td.num, th.num { text-align: right; padding-right: 0; padding-left: 10px; white-space: nowrap; }
+  code { font-family: var(--mono); font-size: 0.9em; background: var(--accent-soft); padding: 1px 5px; border-radius: 3px; }
+
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 14px; }
+  .flow li { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 3px; padding: 5px 10px; }
+  .flow li.arrow { background: none; border: 0; padding: 0; color: var(--ink-3); font-family: var(--mono); }
+  .flow li.key { border-color: var(--accent); color: var(--accent); }
+
+  /* Data block */
+  .data { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--rule); }
+  .data-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end; margin-bottom: 18px; }
+  .data-head h4 { margin: 0; font-size: 19px; font-weight: 600; line-height: 1.35; text-wrap: balance; }
+  .data-head p { font-size: 14.5px; color: var(--ink-2); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: var(--ink-2); margin-bottom: 8px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .sw { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .sw.fill { background: var(--s1); }
+  .sw.hollow { border: 2px solid var(--s2); }
+  .sw.band { width: 16px; border-radius: 2px; background: var(--band); }
+  .chart { position: relative; overflow-x: auto; }
+  .chart svg { display: block; width: 100%; min-width: 560px; height: auto; }
+  .chart text { font-family: var(--body); }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-size: 12.5px; padding: 6px 9px; border-radius: 3px; white-space: nowrap; transform: translate(-50%, -120%); }
+  details { margin-top: 12px; font-size: 14px; }
+  summary { cursor: pointer; color: var(--accent); font-family: var(--mono); font-size: 12.5px; }
+  details .tbl { margin-top: 10px; }
+  .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 18px; border-top: 1px solid var(--rule); }
+  .kpis div { padding: 14px 14px 0 0; }
+  .kpis div + div { padding-left: 14px; border-left: 1px solid var(--rule); }
+  .kpis b { display: block; font-family: var(--display); font-weight: 500; font-size: 22px; font-variant-numeric: tabular-nums; }
+  .kpis span { display: block; font-size: 13.5px; color: var(--ink-2); margin-top: 4px; }
+  .delta { color: var(--good); font-weight: 600; }
+  .muted { color: var(--ink-3); }
+  .note { margin-top: 12px; font-size: 14px; color: var(--ink-2); max-width: 44em; }
+
+  /* Process */
+  .process { padding-top: 80px; }
+  .process h2 { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3.4vw, 34px); }
+  .steps { list-style: none; counter-reset: s; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+  .steps li { counter-increment: s; padding: 16px 16px 0 0; font-size: 14.5px; color: var(--ink-2); }
+  .steps li + li { padding-left: 16px; border-left: 1px solid var(--rule); }
+  .steps li::before { content: counter(s); display: block; font-family: var(--display); font-weight: 500; font-size: 22px; color: var(--accent); margin-bottom: 8px; }
+  .steps b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+  .quote { margin-top: 28px; padding-left: 18px; border-left: 2px solid var(--accent); font-size: 17px; max-width: 40em; color: var(--ink); }
+  .quote cite { display: block; margin-top: 6px; font-style: normal; font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+
+  footer { margin-top: 80px; padding-top: 22px; border-top: 1px solid var(--ink); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: 14.5px; color: var(--ink-2); }
+  footer b { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 860px) {
+    .intro, .p-head, .cols, .data-head { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+    .media { grid-template-columns: minmax(0, 1fr); }
+    .media .side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ledger div:nth-child(3) { padding-left: 0; border-left: 0; }
+    .ledger div:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    .steps { grid-template-columns: minmax(0, 1fr); }
+    .steps li, .steps li + li { padding: 14px 0; border-left: 0; border-bottom: 1px solid var(--rule); }
+    .steps li::before { display: inline; margin-right: 10px; font-size: 18px; }
+  }
+  @media (max-width: 520px) {
+    .media .side { grid-template-columns: minmax(0, 1fr); }
+    .kpis { grid-template-columns: minmax(0, 1fr); }
+    .kpis div, .kpis div + div { padding: 12px 0; border-left: 0; border-bottom: 1px solid var(--rule); }
+    .contact div, .facts div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    figure img { transition: transform 0.25s ease; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span>Данияр Насиров · геймдизайн</span>
+    <nav aria-label="Разделы">
+      <a href="#domain-monsters">Domain Monsters</a>
+      <a href="#verf">Верфь</a>
+      <a href="#verdigri">Вердигри</a>
+      <a href="#process">Как я работаю</a>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <div>
+      <div class="eyebrow">Геймдизайнер (core) · портфолио</div>
+      <h1>Данияр Насиров</h1>
+      <p class="thesis">Пишу спецификации, по которым команда собирает фичу, и проверяю дизайн-решения прототипом, симуляцией и плейтестом, прежде чем в них вкладываться.</p>
+    </div>
+    <dl class="contact">
+      <div><dt>Telegram</dt><dd><a href="https://t.me/LilMiles666">@LilMiles666</a></dd></div>
+      <div><dt>Почта</dt><dd><a href="mailto:dannasirov312@gmail.com">dannasirov312@gmail.com</a></dd></div>
+      <div><dt>Город</dt><dd>Бишкек, готов к переезду в Алматы</dd></div>
+      <div><dt>Бэкграунд</dt><dd>почти 3 года коммерческой разработки</dd></div>
+    </dl>
+  </section>
+
+  <div class="ledger">
+    <div><b>3</b><span>играбельных прототипа: карточный PvP, симулятор управления, детектив</span></div>
+    <div><b>26</b><span>краевых случаев в боевой спецификации Domain Monsters</span></div>
+    <div><b>45 000</b><span>симулированных партий на финальный прогон баланса</span></div>
+    <div><b>120</b><span>воспроизводимых прогонов экономики Верфи на 90 дней</span></div>
+  </div>
+  <p class="team-note">Прототипы сделаны в команде из двух человек. Концепции, GDD, спецификации и решения по балансу — мои.</p>
+
+  <!-- ===================== DOMAIN MONSTERS ===================== -->
+  <section class="project" id="domain-monsters">
+    <div class="p-head">
+      <div>
+        <div class="p-tag">Карточный PvP · 3 на 3</div>
+        <h2>Domain Monsters</h2>
+        <p class="lede">Пошаговые бои командами из трёх монстров. Монстров призывают по домену сайта: <code>github.com</code> всегда даёт одного и того же монстра, а редкость зависит от популярности сайта.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Роль</dt><dd>концепция, боевая и мета-спеки, баланс</dd></div>
+        <div><dt>Платформа</dt><dd>браузер, мобильный ландшафт</dd></div>
+        <div><dt>Стек</dt><dd>TypeScript, React, WebSocket-сервер</dd></div>
+        <div><dt>Режимы</dt><dd>против бота, hot-seat, онлайн 1v1, мета «База»</dd></div>
+        <div><dt>Год</dt><dd>2026</dd></div>
+      </dl>
+    </div>
+
+    <div class="media">
+      <figure>
+        <img src="img/dm-battle.jpg" width="1600" height="900" alt="Экран боя: слева три монстра бота, справа три монстра игрока, в центре лог боя, внизу рука карт с предпросмотром урона">
+        <figcaption><span class="kind">Скриншот прототипа.</span> Бой против бота, сид 42. На каждой карте — предпросмотр урона по формуле из спеки: «Урон: 22 + 8 + 1 = 31». Лог пишет каждый шаг резолва.</figcaption>
+      </figure>
+      <div class="side">
+        <figure>
+          <img src="img/dm-map.jpg" width="1400" height="788" alt="Главное меню в виде карты мира: цитадель, арена, маяк и башни-близнецы как точки входа в режимы">
+          <figcaption><span class="kind">Скриншот.</span> Меню — карта мира: четыре режима как четыре локации.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/dm-summon.jpg" width="1200" height="675" alt="Экран призыва: введён домен github.com, выпал легендарный монстр Суэзо, 23-й сайт в мире по популярности">
+          <figcaption><span class="kind">Скриншот.</span> Призыв: <code>github.com</code> → легендарный Суэзо, 23-й сайт в мире.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>Что я задизайнил</h3>
+        <ul class="did">
+          <li><b>Боевую модель:</b> экономика действий GUTS, жертва карт, щиты, статусы и пять архетипов: AGGRO, TEMPO, CONTROL и DEFENSE дают пассивный «чит», пока носитель жив, MIDRANGE — без чита.</li>
+          <li><b>Призыв по домену:</b> вид монстра — по категории сайта, редкость — по рангу популярности, бонусы — детерминированно из хэша домена. Один домен — всегда один результат.</li>
+          <li><b>Мету первой волны:</b> коллекция, тренировка, открытие видовых карт, две валюты с таблицей faucet/sink, награды за бой, минимальный FTUE.</li>
+          <li><b>«Часы колоды»:</b> колода 50 карт и обязательная жертва карты за ход. Убрали затяжные партии и сделали нежизнеспособной чистую оборону — её я переделал в «бруизера».</li>
+          <li><b>Протокол плейтеста:</b> три сценария на 15–20 минут, что наблюдать молча, вопросы после, метрики и заранее оговорённое решение go / поворот / no-go.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="spec">
+          <div class="spec-id"><span><b>§7</b> Боевая спецификация · пайплайн урона</span><span>пример расчёта</span></div>
+          <p>Кастер — Голем (AGGRO, в агро-окне), POW 5. Карта POW, база 6. Цель — DEFENSE, щит 3, HP 20.</p>
+          <div class="tbl">
+            <table>
+              <thead><tr><th>Шаг</th><th>Расчёт</th><th class="num">урон</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>база + стат кастера: 6 + 5</td><td class="num">11</td></tr>
+                <tr><td>2</td><td>бонус AGGRO: +2</td><td class="num">13</td></tr>
+                <tr><td>3</td><td>AGGRO пробивает половину: 6 мимо щита, щит 3 гасит 3</td><td class="num">10</td></tr>
+                <tr><td>4</td><td>DEFENSE режет четверть: floor(10 × 0,75)</td><td class="num">7</td></tr>
+                <tr><td>5</td><td>HP цели: 20 − 7</td><td class="num">13</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="spec">
+          <div class="spec-id"><span><b>§12</b> Краевые случаи · 2 из 26</span><span>каждый покрыт тестом</span></div>
+          <p><b>Одновременный KO.</b> Одна карта с цепной атакой добила последних монстров обеих сторон — побеждает активный игрок, даже если по тексту карты его монстр умер «первым».</p>
+          <p><b>Щит поверх щита.</b> Меньший щит поверх большего не ухудшает и не суммируется: <code>shield = max(5, 3) = 5</code>.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-id"><span><b>§3.1</b> Мета-спека · экономика</span><span>обоснование числа</span></div>
+          <p>Победа даёт +2 Сигила, поражение — 0: <q>поражение не даёт Сигилов — иначе дефицит мёртв</q>. Эссенция капает и за поражение (+10), чтобы проигрывающий новичок всё равно двигал тренировку.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="data">
+      <div class="data-head">
+        <h4>Все 6 команд вошли в коридор винрейта 45–55% на трёх независимых сидах</h4>
+        <p>Симуляция greedy-бот против greedy-бота: 1000 партий на каждую из 15 пар команд, сиды 7, 42 и 99. Полыми маркерами — первое включение «часов колоды», до правок.</p>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw fill"></i>после правок v2.3, по сидам</span>
+        <span><i class="sw hollow"></i>до правок</span>
+        <span><i class="sw band"></i>целевой коридор 45–55%</span>
+      </div>
+      <div class="chart" id="wr-chart" role="img" aria-label="Винрейт шести команд по трём сидам: все значения от 45,5 до 54,7 процента. До правок Стражи рощи имели 3,5–7,5 процента, Дикие клыки — 68 процентов."></div>
+      <details>
+        <summary>Таблица значений</summary>
+        <div class="tbl">
+          <table>
+            <thead><tr><th>Команда</th><th class="num">сид 7</th><th class="num">сид 42</th><th class="num">сид 99</th><th class="num">до правок</th></tr></thead>
+            <tbody id="wr-table"></tbody>
+          </table>
+        </div>
+      </details>
+      <div class="kpis">
+        <div><b>65% → 0%</b><span>боёв до лимита раундов в худшем матчапе после «часов колоды»</span></div>
+        <div><b>8–11</b><span>раундов — медиана боя при дизайн-цели 9–12</span></div>
+        <div><b>97–100%</b><span>боёв решаются нокаутом, а не опустевшей колодой</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ВЕРФЬ ===================== -->
+  <section class="project" id="verf">
+    <div class="p-head">
+      <div>
+        <div class="p-tag">Симулятор управления · колони-сим</div>
+        <h2>Верфь</h2>
+        <p class="lede">Космическая верфь: принимаешь корабли на ремонт, решаешь, чинить узел в цеху или купить готовый, нанимаешь специалистов и достраиваешь станцию, не уходя в банкротство.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Роль</dt><dd>концепция, GDD, технический спек, экономика</dd></div>
+        <div><dt>Движок</dt><dd>Unity 6, ранее прототип на Godot</dd></div>
+        <div><dt>Арт</dt><dd>модели и анимации из Blender по скриптам</dd></div>
+        <div><dt>Референс</dt><dd>RimWorld-подобная станция, камера 45°</dd></div>
+        <div><dt>Год</dt><dd>2026</dd></div>
+      </dl>
+    </div>
+
+    <div class="media">
+      <figure>
+        <img src="img/sy-concept.jpg" width="1500" height="844" alt="Концепт станции верфи сверху под 45 градусов: доки с кораблями, цеха, жилые блоки и панель заказов">
+        <figcaption><span class="kind">Целевой визуальный концепт</span> — арт-референс для команды, не скриншот игры.</figcaption>
+      </figure>
+      <div class="side">
+        <figure>
+          <img src="img/sy-room.jpg" width="1000" height="656" alt="Модель комнаты станции: док с катером, цех, рабочие">
+          <figcaption><span class="kind">Модели проекта.</span> Кит комнат и док с катером — Blender-пайплайн.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/sy-crew.jpg" width="1100" height="481" alt="Модель рабочего в жёлтом комбинезоне с разных ракурсов и в рабочих позах">
+          <figcaption><span class="kind">Модели проекта.</span> Рабочий: риг и 7 анимационных клипов.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>Кор-луп</h3>
+        <ul class="flow" aria-label="Кор-луп верфи">
+          <li>приём корабля</li><li class="arrow">→</li>
+          <li>кран снимает узел</li><li class="arrow">→</li>
+          <li class="key">ремонт или покупка?</li><li class="arrow">→</li>
+          <li>логистика</li><li class="arrow">→</li>
+          <li>цех</li><li class="arrow">→</li>
+          <li>установка</li><li class="arrow">→</li>
+          <li>сдача и оплата</li>
+        </ul>
+        <h3 style="margin-top:30px">Что я задизайнил</h3>
+        <ul class="did">
+          <li><b>Решение в центре лупа:</b> ремонт дешевле, но занимает цех и специалиста; покупка быстрая, но при постоянном использовании уводит в убыток. Так покупка остаётся инструментом для срочных заказов.</li>
+          <li><b>Общие ограничения мощности:</b> кран, логист, цеха и специалисты делятся между заказами; корпусники — между ремонтом и стройкой.</li>
+          <li><b>Системы глубины:</b> усталость и отдых, дефекты уставших специалистов, испытательный стенд с повторной проверкой, отложенные гарантийные штрафы.</li>
+          <li><b>Рост станции:</b> комнаты, секции корпуса 3×3, снос с возвратом 20%, найм под койки.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="spec">
+          <div class="spec-id"><span><b>Документы</b> проекта</span><span>поддерживаются вместе с кодом</span></div>
+          <div class="tbl">
+            <table>
+              <tbody>
+                <tr><td>GDD</td><td>концепция, экономика, кран, корпус, персонал, рост, мир, отброшенные идеи</td></tr>
+                <tr><td>Тех-спек v1</td><td>модель состояния, команды, константы, формулы, порядок тика</td></tr>
+                <tr><td>Патч 00</td><td>строительство станции, расширение, снос, жильё</td></tr>
+                <tr><td>Патч 01</td><td>пересмотр модели производства, варианты A / B / C</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="spec">
+          <div class="spec-id"><span><b>Как читать противоречия</b> между версиями</span><span>из карты документации</span></div>
+          <p>Старый спек исключает растущий корпус из v1 — патч 00 включает расширение секциями. Исходный GDD объяснял производство возрастающей отдачей — патч 01 исправляет это на постоянную отдачу при неограниченном спросе.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="data">
+      <div class="data-head">
+        <h4>Ни одного банкротства на старте после правки выдачи заказов и цен</h4>
+        <p>20 сидов × 90 игровых дней на каждую стратегию автоигрока. Изменения: корабль приходит того класса, который станция способна обслужить; перенастроены награда за катер и цены замен.</p>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Стартовая стратегия</th><th class="num">банкротств из 20</th><th class="num">сдано кораблей</th><th class="num">простой причалов</th></tr></thead>
+          <tbody>
+            <tr><td>ремонт без испытаний</td><td class="num">5 → <span class="delta">0</span></td><td class="num">17,8 → 89,5</td><td class="num">90,2% → 54,4%</td></tr>
+            <tr><td>испытание каждого корабля</td><td class="num">8 → <span class="delta">0</span></td><td class="num">16,3 → 85,7</td><td class="num">83,5% → 36,4%</td></tr>
+            <tr><td>покупка замен</td><td class="num">12 → <span class="delta">0</span></td><td class="num">16,4 → 89,5</td><td class="num">96,2% → 83,4%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Проверка роста на 180 дней: 10 из 10 прогонов без банкротств прошли путь через реальные стройки до фрегатов и сухогрузов, первый фрегат — около 137-го дня. <span class="muted">Открытый вопрос для следующей итерации: испытательный стенд всё ещё невыгоден как первая постройка.</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== ВЕРДИГРИ ===================== -->
+  <section class="project" id="verdigri">
+    <div class="p-head">
+      <div>
+        <div class="p-tag">Детективная point-and-click адвенчура</div>
+        <h2>Вердигри</h2>
+        <p class="lede">Детектив Майя касается потерянного предмета и видит его прошлое. Каждый эпизод — отдельное дело, в котором игрок решает, вернуть ли предмет владельцу и восстановить ли правду.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Роль</dt><dd>концепция, нарративный и технический дизайн</dd></div>
+        <div><dt>Движок</dt><dd>свой: Rust + Bevy, редактор эпизодов</dd></div>
+        <div><dt>Эпизоды</dt><dd>3 эпизода, языки ru и en</dd></div>
+        <div><dt>Год</dt><dd>2026</dd></div>
+      </dl>
+    </div>
+
+    <div class="media">
+      <figure>
+        <img src="img/vd-intro.jpg" width="1500" height="837" alt="Катсцена: детектив в плаще стоит на ночном пирсе под дождём, вдалеке маяк">
+        <figcaption><span class="kind">Арт прототипа.</span> Катсцена-хук эпизода 2 «Компас смотрителя маяка».</figcaption>
+      </figure>
+      <div class="side">
+        <figure>
+          <img src="img/vd-shop.jpg" width="1000" height="559" alt="Фон сцены: лавка диковин с полками, лампами и склянками">
+          <figcaption><span class="kind">Арт прототипа.</span> Сцена «лавка диковин».</figcaption>
+        </figure>
+        <figure>
+          <img src="img/vd-vision.jpg" width="1000" height="558" alt="Крупный план: рука держит медальон с зелёным свечением">
+          <figcaption><span class="kind">Арт прототипа.</span> Медальон — механика «Зрения».</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>Формула эпизода</h3>
+        <ul class="flow" aria-label="Формула эпизода">
+          <li>потерянный предмет</li><li class="arrow">→</li>
+          <li>видение</li><li class="arrow">→</li>
+          <li>опознание владельца</li><li class="arrow">→</li>
+          <li>починка</li><li class="arrow">→</li>
+          <li>расследование</li><li class="arrow">→</li>
+          <li class="key">дело: 3 исхода</li>
+        </ul>
+        <h3 style="margin-top:30px">Что я задизайнил</h3>
+        <ul class="did">
+          <li><b>Кейс-модуль как механику:</b> улики из видения, опознание, вмешательства с условиями и лесенка исходов. Дедукция встроена в данные, а не пишется кодом под каждый эпизод.</li>
+          <li><b>Двухосную мораль:</b> вернуть <i>предмет</i> и восстановить <i>правду</i> — две независимые оси, поэтому «цена» ощущается половиной победы, а не ослабленным успехом.</li>
+          <li><b>Инструменты для авторов:</b> единый конструктор условий и эффектов, линтер тупиков расследования и недостижимых вмешательств, экспорт локализации в CSV.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="spec">
+          <div class="spec-id"><span><b>§7</b> Эпизод 2 · исходы</span><span>лесенка all → any → default</span></div>
+          <div class="tbl">
+            <table>
+              <thead><tr><th>Исход</th><th>Условие</th></tr></thead>
+              <tbody>
+                <tr><td>идеальный</td><td>вернуть компас <b>и</b> очистить имя Лючии, <b>не</b> продав компас коллекционеру</td></tr>
+                <tr><td>с ценой</td><td>вернуть компас <b>или</b> очистить имя</td></tr>
+                <tr><td>провал</td><td>всё остальное</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Продажа коллекционеру ломает идеальный финал: в лучшем случае — «цена».</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="data">
+      <div class="data-head">
+        <h4>Перед проектированием редактора — разбор 7 референсных движков</h4>
+        <p>Сравнение по тому, что важно автору эпизодов: как пишется логика, ловит ли инструмент ошибки до запуска и как быстро проверить сцену.</p>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Движок</th><th>Логика и состояние</th><th>Проверка до запуска</th><th>Плейтест</th></tr></thead>
+          <tbody>
+            <tr><td><b>Вердигри</b></td><td>условия и эффекты в данных</td><td>богатый линтер</td><td>симуляция на движке, headless</td></tr>
+            <tr><td>AGS</td><td>C-подобный скрипт</td><td>нет, есть отладчик</td><td>запуск, брейкпойнты</td></tr>
+            <tr><td>Visionaire</td><td>визуальные действия + Lua</td><td>нет</td><td>запуск, консоль</td></tr>
+            <tr><td>Adventure Creator</td><td>ActionList: Check → Set</td><td>нет</td><td>Unity Play + наблюдатель</td></tr>
+            <tr><td>PowerQuest</td><td>C#-скрипт</td><td>компилятор</td><td>hot-reload</td></tr>
+            <tr><td>Escoria</td><td>DSL событий и команд</td><td>нет</td><td>запуск в редакторе</td></tr>
+            <tr><td>Ink</td><td>переменные, списки, счётчики посещений</td><td>проверки при компиляции</td><td>Inky, hot-reload</td></tr>
+            <tr><td>Ren'Py</td><td>Python-DSL</td><td>встроенный lint</td><td>hot-reload, автотесты</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Вывод разбора: главное отличие Вердигри — дедукция как встроенная механика и статическая проверка дела на тупики. Слабые места, зафиксированные в разборе: нет A*-навигации и сборки под платформы. Отдельно провёл UX-аудит редактора с приоритетами P0–P2.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section class="process" id="process">
+    <h2>Как я работаю над фичей</h2>
+    <ol class="steps">
+      <li><b>Спека</b>Правила, модель данных, краевые случаи, таблица констант и отдельный список «дефолты к пересмотру».</li>
+      <li><b>Прототип</b>Самая дешёвая проверка: цепляет ли ядро, до вложений в мету и арт.</li>
+      <li><b>Симуляция и плейтест</b>Боты и тысячи прогонов на числа, живые люди — на ощущения и понятность.</li>
+      <li><b>Отчёт</b>«Было → стало» по метрикам, остаточные риски, что не трогал и почему.</li>
+      <li><b>Решение</b>Правка спеки и констант; спорное выносится в открытые вопросы.</li>
+    </ol>
+    <p class="quote">Не накапливать вложения поверх непроверенного фана. Плейтест — самая дешёвая страховка от постройки небоскрёба на песке.<cite>из протокола плейтеста Domain Monsters</cite></p>
+  </section>
+
+  <footer>
+    <div><b>Данияр Насиров</b> · геймдизайнер (core)</div>
+    <div><a href="https://t.me/LilMiles666">Telegram @LilMiles666</a> · <a href="mailto:dannasirov312@gmail.com">dannasirov312@gmail.com</a></div>
+    <div>Спецификации, баланс-отчёты и билды целиком покажу на собеседовании.</div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var teams = [
+    { name: 'Камнеломы', arch: 'aggro', v: [48.0, 49.0, 47.1] },
+    { name: 'Быстролапы', arch: 'tempo', v: [52.9, 52.1, 52.5] },
+    { name: 'Хранители разума', arch: 'control', v: [45.7, 45.5, 46.7] },
+    { name: 'Дикие клыки', arch: 'моно-AGGRO', v: [48.7, 49.5, 47.7], before: [68] },
+    { name: 'Зов глубин', arch: 'deepcallers', v: [49.9, 50.3, 52.5] },
+    { name: 'Стражи рощи', arch: 'DEFENSE → бруизер', v: [54.7, 53.6, 53.6], before: [3.5, 7.5] }
+  ];
+  var seeds = [7, 42, 99];
+  var fmt = function (n) { return n.toFixed(1).replace('.', ',') + '%'; };
+
+  // Table view
+  var tb = document.getElementById('wr-table');
+  teams.forEach(function (t) {
+    var tr = document.createElement('tr');
+    var before = t.before ? (t.before.length > 1 ? fmt(t.before[0]) + '–' + fmt(t.before[1]) : fmt(t.before[0])) : '—';
+    tr.innerHTML = '<td>' + t.name + ' <span class="muted">· ' + t.arch + '</span></td>' +
+      t.v.map(function (x) { return '<td class="num">' + fmt(x) + '</td>'; }).join('') +
+      '<td class="num">' + before + '</td>';
+    tb.appendChild(tr);
+  });
+
+  // Dot plot
+  var host = document.getElementById('wr-chart');
+  var NS = 'http://www.w3.org/2000/svg';
+  var W = 760, L = 190, R = 24, T = 26, rowH = 38, B = 34;
+  var H = T + rowH * teams.length + B;
+  var x0 = 0, x1 = 70;
+  var x = function (v) { return L + (v - x0) / (x1 - x0) * (W - L - R); };
+  var svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.setAttribute('aria-hidden', 'true');
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    (parent || svg).appendChild(n);
+    return n;
+  }
+  var plotBottom = T + rowH * teams.length;
+  // target band
+  el('rect', { x: x(45), y: T - 6, width: x(55) - x(45), height: plotBottom - T + 6, fill: 'var(--band)' });
+  // grid + axis
+  for (var g = 0; g <= 70; g += 10) {
+    el('line', { x1: x(g), x2: x(g), y1: T - 6, y2: plotBottom, stroke: 'var(--rule)', 'stroke-width': 1 });
+    var tx = el('text', { x: x(g), y: plotBottom + 20, 'text-anchor': 'middle', 'font-size': 12, fill: 'var(--ink-3)' });
+    tx.textContent = g + '%';
+  }
+  var bandLbl = el('text', { x: (x(45) + x(55)) / 2, y: T - 11, 'text-anchor': 'middle', 'font-size': 11.5, fill: 'var(--ink-2)' });
+  bandLbl.textContent = 'цель 45–55%';
+
+  var tip = document.createElement('div');
+  tip.className = 'tip';
+  tip.hidden = true;
+  host.appendChild(tip);
+  function hover(node, text, cx, cy) {
+    node.addEventListener('pointerenter', function () {
+      tip.textContent = text;
+      var box = svg.getBoundingClientRect();
+      var s = box.width / W;
+      tip.style.left = (cx * s) + 'px';
+      tip.style.top = (cy * s) + 'px';
+      tip.hidden = false;
+    });
+    node.addEventListener('pointerleave', function () { tip.hidden = true; });
+  }
+
+  teams.forEach(function (t, i) {
+    var cy = T + rowH * i + rowH / 2;
+    var n1 = el('text', { x: 0, y: cy - 3, 'font-size': 13.5, fill: 'var(--ink)', 'font-weight': 500 });
+    n1.textContent = t.name;
+    var n2 = el('text', { x: 0, y: cy + 13, 'font-size': 11.5, fill: 'var(--ink-3)' });
+    n2.textContent = t.arch;
+    el('line', { x1: L, x2: W - R, y1: cy, y2: cy, stroke: 'var(--rule)', 'stroke-width': 1, opacity: 0.6 });
+
+    if (t.before) {
+      if (t.before.length > 1) {
+        el('line', { x1: x(t.before[0]), x2: x(t.before[1]), y1: cy, y2: cy, stroke: 'var(--s2)', 'stroke-width': 2, 'stroke-linecap': 'round' });
+      }
+      t.before.forEach(function (b) {
+        el('circle', { cx: x(b), cy: cy, r: 5, fill: 'var(--paper)', stroke: 'var(--s2)', 'stroke-width': 2 });
+      });
+      var bLabel = t.before.length > 1 ? 'до: ' + fmt(t.before[0]) + '–' + fmt(t.before[1]) : 'до: ' + fmt(t.before[0]);
+      var bLast = t.before[t.before.length - 1];
+      var onLeft = bLast > 60;
+      var lbl = el('text', {
+        x: onLeft ? x(t.before[0]) - 10 : x(bLast) + 10, y: cy + 4,
+        'text-anchor': onLeft ? 'end' : 'start', 'font-size': 11.5, fill: 'var(--ink-2)'
+      });
+      lbl.textContent = bLabel;
+      var hitB = el('rect', { x: x(t.before[0]) - 10, y: cy - 12, width: Math.max(20, x(t.before[t.before.length - 1]) - x(t.before[0]) + 20), height: 24, fill: 'transparent' });
+      hover(hitB, t.name + ' до правок: ' + bLabel.replace('до: ', ''), x(t.before[0]), cy - 8);
+    }
+
+    var lo = Math.min.apply(null, t.v), hi = Math.max.apply(null, t.v);
+    el('line', { x1: x(lo), x2: x(hi), y1: cy, y2: cy, stroke: 'var(--s1)', 'stroke-width': 2, 'stroke-linecap': 'round', opacity: 0.55 });
+    t.v.forEach(function (v, k) {
+      el('circle', { cx: x(v), cy: cy, r: 5, fill: 'var(--s1)', stroke: 'var(--paper)', 'stroke-width': 2 });
+      var hit = el('circle', { cx: x(v), cy: cy, r: 11, fill: 'transparent' });
+      hover(hit, t.name + ' · сид ' + seeds[k] + ': ' + fmt(v), x(v), cy - 8);
+    });
+  });
+  host.insertBefore(svg, tip);
+})();
+</script>
+
+</body>
+</html>

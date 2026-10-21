@@ -109,6 +109,8 @@
   .media { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin-top: 26px; }
   .media.single { grid-template-columns: minmax(0, 1fr); max-width: 860px; }
   .media .side { display: grid; gap: 14px; align-content: start; }
+  .media.duo { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: start; }
+  .credit { margin-top: 12px; font-family: var(--mono); font-size: 11.5px; line-height: 1.5; color: var(--ink-3); }
   figure { margin: 0; }
   figure img { display: block; width: 100%; height: auto; border-radius: 4px; background: var(--doc); }
   figcaption { margin-top: 8px; font-family: var(--mono); font-size: 11.5px; line-height: 1.5; color: var(--ink-3); }
@@ -181,7 +183,7 @@
 
   @media (max-width: 860px) {
     .intro, .p-head, .cols, .data-head { grid-template-columns: minmax(0, 1fr); gap: 22px; }
-    .media { grid-template-columns: minmax(0, 1fr); }
+    .media, .media.duo { grid-template-columns: minmax(0, 1fr); }
     .media .side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .ledger div:nth-child(3) { padding-left: 0; border-left: 0; }
@@ -378,12 +380,33 @@
       </dl>
     </div>
 
-    <div class="media single">
+    <div class="media">
       <figure>
-        <img src="img/bc-board.jpg" width="1280" height="772" alt="Chess board mid-game with a move list in Russian notation and captured pieces on the side panel">
-        <figcaption><span class="ru"><span class="kind">Скриншот игры, 2D-доска.</span> Фигуры и интерфейс нарисованы кодом; справа взятые фигуры и ходы в русской нотации. Графику оригинала здесь не показываю — она принадлежит Interplay.</span><span class="en"><span class="kind">Game screenshot, 2D board.</span> Pieces and UI are drawn in code; the side panel shows captures and moves in Russian notation. The original game's art is not shown here — it belongs to Interplay.</span></figcaption>
+        <img src="img/bc-fight.png" width="1280" height="772" alt="Battle Chess mode: a close-up duel where the black queen casts a spell at a white pawn; the caption reads “Queen takes pawn — variant 5 of 5”">
+        <figcaption><span class="ru"><span class="kind">Скриншот режима «Battle Chess».</span> Поединок: ферзь берёт пешку — пятый вариант боя для этой пары, собранный по правилам движка оригинала.</span><span class="en"><span class="kind">Battle Chess mode screenshot.</span> A duel: the queen takes a pawn — the fifth fight variant for this pair, assembled by the original engine's rules.</span></figcaption>
+      </figure>
+      <div class="side">
+        <figure>
+          <img src="img/bc-game.png" width="1280" height="772" loading="lazy" alt="Battle Chess mode: a game in progress on the original perspective board with a 1-bit Macintosh-style side panel">
+          <figcaption><span class="ru"><span class="kind">Скриншот.</span> Партия на перспективной доске оригинала, интерфейс в стиле Mac System 6.</span><span class="en"><span class="kind">Screenshot.</span> A game on the original perspective board, with a Mac System 6 style interface.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/bc-promotion.png" width="1280" height="772" loading="lazy" alt="Pawn promotion dialog with pictures of the queen, rook, bishop and knight">
+          <figcaption><span class="ru"><span class="kind">Скриншот.</span> Диалог превращения пешки с картинками из оригинала.</span><span class="en"><span class="kind">Screenshot.</span> The pawn promotion dialog with pictures from the original.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="media duo">
+      <figure>
+        <img src="img/bc-board.jpg" width="1280" height="772" loading="lazy" alt="The 2D view: a code-drawn chess board mid-game with a move list in Russian notation">
+        <figcaption><span class="ru"><span class="kind">Вид 2D.</span> Фигуры и интерфейс нарисованы кодом, ресурсы оригинала не нужны.</span><span class="en"><span class="kind">2D view.</span> Pieces and UI are drawn in code; no original assets needed.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/bc-rotate.webp" width="570" height="525" loading="lazy" alt="Animation: in a two-player game the pieces circle round the board to face the side to move">
+        <figcaption><span class="ru"><span class="kind">Анимация.</span> Автоповорот доски для двух игроков.</span><span class="en"><span class="kind">Animation.</span> Auto-rotating board for two players.</span></figcaption>
       </figure>
     </div>
+    <p class="credit"><span class="ru">Графика режима «Battle Chess» © Interplay, из личной копии игры. Ресурсы игры не входят ни в репозиторий, ни в релиз.</span><span class="en">Battle Chess mode art © Interplay, from a personal copy of the game. No game assets ship in the repository or the release.</span></p>
 
     <div class="cols">
       <div>

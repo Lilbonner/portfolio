@@ -4,38 +4,42 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Портфолио Данияра Насирова</title>
-<meta name="description" content="Портфолио геймдизайнера Данияра Насирова: Domain Monsters, Верфь, Вердигри — спецификации, баланс, скриншоты.">
-<meta property="og:title" content="Портфолио Данияра Насирова">
-<meta property="og:description" content="Геймдизайнер (core): три прототипа со спецификациями, данными баланса и скриншотами.">
+<meta name="description" content="Daniyar Nasirov — game projects portfolio: Domain Monsters, Battle Chess, Night Train, Shipyard, Verdigri. Specs, balance data, screenshots. RU / EN.">
+<meta property="og:title" content="Daniyar Nasirov — Game Projects Portfolio">
+<meta property="og:description" content="Five game projects with specs, balance data and screenshots. Russian and English.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://lilbonner.github.io/portfolio/img/dm-battle.jpg">
 <meta property="og:url" content="https://lilbonner.github.io/portfolio/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B2%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&display=swap">
+<script>
+  // Pick the language before first paint so the page never flashes the wrong one.
+  (function () {
+    var lang = null;
+    try { lang = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+    if (lang !== 'ru' && lang !== 'en') {
+      try { lang = localStorage.getItem('pf-lang'); } catch (e) {}
+    }
+    if (lang !== 'ru' && lang !== 'en') {
+      lang = (navigator.language || '').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en';
+    }
+    document.documentElement.lang = lang;
+  })();
+</script>
 <style>
   html { color-scheme: light dark; }
   body { margin: 0; }
   img { max-width: 100%; }
   [hidden] { display: none !important; }
-</style>
+  html[lang="ru"] .en, html[lang="en"] .ru { display: none !important; }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;700&display=swap">
-<style>
   :root {
-    --paper: #f3f4f1;
-    --paper-2: #fafbf8;
-    --doc: #eaeee9;
-    --ink: #15191b;
-    --ink-2: #4b5559;
-    --ink-3: #737d81;
-    --rule: #d6dbd5;
-    --accent: #0b6b66;
-    --accent-soft: rgba(11, 107, 102, 0.09);
-    --band: rgba(11, 107, 102, 0.12);
-    --s1: #2a78d6;
-    --s2: #eb6834;
-    --good: #1d7a3a;
+    --paper: #f3f4f1; --paper-2: #fafbf8; --doc: #eaeee9;
+    --ink: #15191b; --ink-2: #4b5559; --ink-3: #737d81; --rule: #d6dbd5;
+    --accent: #0b6b66; --accent-soft: rgba(11, 107, 102, 0.09); --band: rgba(11, 107, 102, 0.12);
+    --s1: #2a78d6; --s2: #eb6834; --good: #1d7a3a;
     --display: "Unbounded", "Arial Black", "Segoe UI", sans-serif;
     --body: "Golos Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     --mono: "JetBrains Mono", "Cascadia Mono", Consolas, "Courier New", monospace;
@@ -43,71 +47,43 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper: #111416;
-      --paper-2: #171b1e;
-      --doc: #1a2023;
-      --ink: #e8ecea;
-      --ink-2: #aab3b6;
-      --ink-3: #808a8e;
-      --rule: #2a3134;
-      --accent: #5dbdb5;
-      --accent-soft: rgba(93, 189, 181, 0.12);
-      --band: rgba(93, 189, 181, 0.14);
-      --s1: #3987e5;
-      --s2: #d95926;
-      --good: #4fbf73;
-      color-scheme: dark;
+      --paper: #111416; --paper-2: #171b1e; --doc: #1a2023;
+      --ink: #e8ecea; --ink-2: #aab3b6; --ink-3: #808a8e; --rule: #2a3134;
+      --accent: #5dbdb5; --accent-soft: rgba(93, 189, 181, 0.12); --band: rgba(93, 189, 181, 0.14);
+      --s1: #3987e5; --s2: #d95926; --good: #4fbf73; color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
-    --paper: #111416;
-    --paper-2: #171b1e;
-    --doc: #1a2023;
-    --ink: #e8ecea;
-    --ink-2: #aab3b6;
-    --ink-3: #808a8e;
-    --rule: #2a3134;
-    --accent: #5dbdb5;
-    --accent-soft: rgba(93, 189, 181, 0.12);
-    --band: rgba(93, 189, 181, 0.14);
-    --s1: #3987e5;
-    --s2: #d95926;
-    --good: #4fbf73;
-    color-scheme: dark;
+    --paper: #111416; --paper-2: #171b1e; --doc: #1a2023;
+    --ink: #e8ecea; --ink-2: #aab3b6; --ink-3: #808a8e; --rule: #2a3134;
+    --accent: #5dbdb5; --accent-soft: rgba(93, 189, 181, 0.12); --band: rgba(93, 189, 181, 0.14);
+    --s1: #3987e5; --s2: #d95926; --good: #4fbf73; color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 16px;
-    line-height: 1.55;
-    padding-inline: 20px;
-    padding-block: 0 64px;
-  }
+  body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55;
+         padding-inline: 20px; padding-block: 0 64px; }
   .wrap { max-width: 1080px; margin: 0 auto; }
   a { color: var(--accent); text-underline-offset: 3px; }
-  a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
   h1, h2, h3 { text-wrap: balance; margin: 0; }
   p { margin: 0; }
-  .mono { font-family: var(--mono); }
 
-  /* ---------- Header ---------- */
-  .top {
-    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
-    padding-block: 20px; border-bottom: 1px solid var(--rule);
-    font-family: var(--mono); font-size: 12.5px; color: var(--ink-3);
-  }
-  .top nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+         padding-block: 18px; border-bottom: 1px solid var(--rule); font-family: var(--mono); font-size: 12.5px; color: var(--ink-3); }
+  .top nav { display: flex; flex-wrap: wrap; gap: 6px 16px; }
   .top nav a { color: var(--ink-2); text-decoration: none; }
   .top nav a:hover { color: var(--accent); }
+  .lang { display: inline-flex; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+  .lang button { font: inherit; font-size: 12px; letter-spacing: 0.06em; padding: 5px 10px; border: 0; background: transparent;
+                 color: var(--ink-2); cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--accent); color: var(--paper); }
 
   .intro { padding-block: 48px 40px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; align-items: end; }
   .eyebrow { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
   .intro h1 { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 5.6vw, 58px); line-height: 1.02; letter-spacing: -0.01em; }
   .thesis { margin-top: 20px; font-size: 19px; line-height: 1.5; color: var(--ink-2); max-width: 34em; }
-  .contact { display: grid; gap: 10px; font-size: 15px; }
+  .contact { display: grid; gap: 10px; font-size: 15px; margin: 0; }
   .contact div { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
   .contact dt { font-family: var(--mono); font-size: 12px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
   .contact dd { margin: 0; }
@@ -119,19 +95,19 @@
   .ledger span { display: block; margin-top: 6px; font-size: 13.5px; color: var(--ink-2); line-height: 1.4; }
   .team-note { margin-top: 14px; font-size: 14px; color: var(--ink-3); }
 
-  /* ---------- Project ---------- */
   .project { padding-top: 72px; }
   .p-head { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: start; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
   .p-tag { font-family: var(--mono); font-size: 12.5px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
   .p-head h2 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4vw, 40px); line-height: 1.05; margin-top: 10px; }
   .p-head .lede { margin-top: 12px; font-size: 17px; color: var(--ink-2); max-width: 36em; }
-  .facts { display: grid; gap: 0; margin: 0; font-size: 14px; }
+  .facts { display: grid; margin: 0; font-size: 14px; }
   .facts div { display: grid; grid-template-columns: 7em 1fr; gap: 12px; padding-block: 7px; border-bottom: 1px solid var(--rule); }
   .facts div:first-child { border-top: 1px solid var(--rule); }
   .facts dt { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
   .facts dd { margin: 0; }
 
   .media { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 14px; margin-top: 26px; }
+  .media.single { grid-template-columns: minmax(0, 1fr); max-width: 860px; }
   .media .side { display: grid; gap: 14px; align-content: start; }
   figure { margin: 0; }
   figure img { display: block; width: 100%; height: auto; border-radius: 4px; background: var(--doc); }
@@ -145,19 +121,18 @@
   .did li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 2px; background: var(--accent); }
   .did b { font-weight: 600; }
 
-  /* Spec excerpt: looks like a page from the design doc */
   .spec { background: var(--doc); border: 1px solid var(--rule); border-radius: 4px; padding: 18px 20px 20px; font-size: 14.5px; }
   .spec + .spec { margin-top: 14px; }
   .spec-id { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); padding-bottom: 10px; margin-bottom: 12px; border-bottom: 1px solid var(--rule); }
   .spec-id b { color: var(--accent); font-weight: 500; }
-  .spec p + p, .spec p + .tbl, .spec .tbl + p, .spec pre + p, .spec p + pre { margin-top: 10px; }
-  .spec pre { margin: 0; font-family: var(--mono); font-size: 12.5px; line-height: 1.6; white-space: pre-wrap; color: var(--ink); }
-  .spec q { quotes: "«" "»"; }
+  .spec p + p, .spec p + .tbl, .spec .tbl + p { margin-top: 10px; }
+  .formula { font-family: var(--mono); font-size: 14px; background: var(--paper-2); border: 1px solid var(--rule); border-radius: 3px; padding: 10px 12px; overflow-x: auto; }
   .tbl { overflow-x: auto; }
   table { border-collapse: collapse; width: 100%; font-size: 13.5px; font-variant-numeric: tabular-nums; }
   th, td { text-align: left; padding: 7px 10px 7px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
   th { font-family: var(--mono); font-weight: 500; font-size: 11.5px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.05em; }
   td.num, th.num { text-align: right; padding-right: 0; padding-left: 10px; white-space: nowrap; }
+  td.num + td, th.num + th { padding-left: 16px; }
   code { font-family: var(--mono); font-size: 0.9em; background: var(--accent-soft); padding: 1px 5px; border-radius: 3px; }
 
   .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 14px; }
@@ -165,7 +140,6 @@
   .flow li.arrow { background: none; border: 0; padding: 0; color: var(--ink-3); font-family: var(--mono); }
   .flow li.key { border-color: var(--accent); color: var(--accent); }
 
-  /* Data block */
   .data { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--rule); }
   .data-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end; margin-bottom: 18px; }
   .data-head h4 { margin: 0; font-size: 19px; font-weight: 600; line-height: 1.35; text-wrap: balance; }
@@ -183,7 +157,7 @@
   details { margin-top: 12px; font-size: 14px; }
   summary { cursor: pointer; color: var(--accent); font-family: var(--mono); font-size: 12.5px; }
   details .tbl { margin-top: 10px; }
-  .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 18px; border-top: 1px solid var(--rule); }
+  .kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 18px; border-top: 1px solid var(--rule); }
   .kpis div { padding: 14px 14px 0 0; }
   .kpis div + div { padding-left: 14px; border-left: 1px solid var(--rule); }
   .kpis b { display: block; font-family: var(--display); font-weight: 500; font-size: 22px; font-variant-numeric: tabular-nums; }
@@ -192,7 +166,6 @@
   .muted { color: var(--ink-3); }
   .note { margin-top: 12px; font-size: 14px; color: var(--ink-2); max-width: 44em; }
 
-  /* Process */
   .process { padding-top: 80px; }
   .process h2 { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3.4vw, 34px); }
   .steps { list-style: none; counter-reset: s; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
@@ -223,298 +196,510 @@
     .kpis div, .kpis div + div { padding: 12px 0; border-left: 0; border-bottom: 1px solid var(--rule); }
     .contact div, .facts div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   }
-  @media (prefers-reduced-motion: no-preference) {
-    figure img { transition: transform 0.25s ease; }
-  }
 </style>
 </head>
 <body>
-
 <div class="wrap">
   <header class="top">
-    <span>Данияр Насиров · геймдизайн</span>
-    <nav aria-label="Разделы">
+    <span><span class="ru">Данияр Насиров · геймдизайн и разработка</span><span class="en">Daniyar Nasirov · game design and development</span></span>
+    <nav aria-label="Sections">
       <a href="#domain-monsters">Domain Monsters</a>
-      <a href="#verf">Верфь</a>
-      <a href="#verdigri">Вердигри</a>
-      <a href="#process">Как я работаю</a>
+      <a href="#battle-chess">Battle Chess</a>
+      <a href="#night-train"><span class="ru">Ночной поезд</span><span class="en">Night Train</span></a>
+      <a href="#verf"><span class="ru">Верфь</span><span class="en">Shipyard</span></a>
+      <a href="#verdigri"><span class="ru">Вердигри</span><span class="en">Verdigri</span></a>
+      <a href="#process"><span class="ru">Как я работаю</span><span class="en">How I work</span></a>
     </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-ru" data-lang="ru">RU</button>
+      <button type="button" id="lang-en" data-lang="en">EN</button>
+    </div>
   </header>
 
   <section class="intro">
     <div>
-      <div class="eyebrow">Геймдизайнер (core) · портфолио</div>
-      <h1>Данияр Насиров</h1>
-      <p class="thesis">Пишу спецификации, по которым команда собирает фичу, и проверяю дизайн-решения прототипом, симуляцией и плейтестом, прежде чем в них вкладываться.</p>
+      <div class="eyebrow"><span class="ru">Геймдизайн и разработка · портфолио</span><span class="en">Game design and development · portfolio</span></div>
+      <h1><span class="ru">Данияр Насиров</span><span class="en">Daniyar Nasirov</span></h1>
+      <p class="thesis">
+        <span class="ru">Пишу спецификации, по которым команда собирает фичу, и проверяю решения прототипом, симуляцией и плейтестом, прежде чем в них вкладываться.</span>
+        <span class="en">I write specs a team can build a feature from, and I test design decisions with prototypes, simulations and playtests before investing in them.</span>
+      </p>
     </div>
     <dl class="contact">
       <div><dt>Telegram</dt><dd><a href="https://t.me/LilMiles666">@LilMiles666</a></dd></div>
-      <div><dt>Почта</dt><dd><a href="mailto:dannasirov312@gmail.com">dannasirov312@gmail.com</a></dd></div>
-      <div><dt>Город</dt><dd>Бишкек, готов к переезду в Алматы</dd></div>
-      <div><dt>Бэкграунд</dt><dd>почти 3 года коммерческой разработки</dd></div>
+      <div><dt><span class="ru">Почта</span><span class="en">Email</span></dt><dd><a href="mailto:dannasirov312@gmail.com">dannasirov312@gmail.com</a></dd></div>
+      <div><dt>GitHub</dt><dd><a href="https://github.com/Lilbonner">github.com/Lilbonner</a></dd></div>
+      <div><dt><span class="ru">Опыт</span><span class="en">Background</span></dt><dd><span class="ru">4 года коммерческой разработки</span><span class="en">4 years of commercial software development</span></dd></div>
     </dl>
   </section>
 
   <div class="ledger">
-    <div><b>3</b><span>играбельных прототипа: карточный PvP, симулятор управления, детектив</span></div>
-    <div><b>26</b><span>краевых случаев в боевой спецификации Domain Monsters</span></div>
-    <div><b>45 000</b><span>симулированных партий на финальный прогон баланса</span></div>
-    <div><b>120</b><span>воспроизводимых прогонов экономики Верфи на 90 дней</span></div>
+    <div><b>5</b><span class="ru">игровых проектов: карточный PvP, шахматы, кооп-выживание, симулятор управления, детектив</span><span class="en">game projects: card PvP, chess, co-op survival, management sim, detective</span></div>
+    <div><b>26</b><span class="ru">краевых случаев в боевой спецификации Domain Monsters</span><span class="en">edge cases in the Domain Monsters battle spec</span></div>
+    <div><b><span class="ru">45 000</span><span class="en">45,000</span></b><span class="ru">симулированных партий на финальный прогон баланса</span><span class="en">simulated matches per final balance run</span></div>
+    <div><b>120</b><span class="ru">воспроизводимых прогонов экономики Верфи на 90 дней</span><span class="en">reproducible 90-day economy runs for Shipyard</span></div>
   </div>
-  <p class="team-note">Прототипы сделаны в команде из двух человек. Концепции, GDD, спецификации и решения по балансу — мои.</p>
+  <p class="team-note">
+    <span class="ru">Battle Chess — личный проект. Остальные сделаны в команде из двух человек; в Domain Monsters, Верфи и Вердигри концепции, GDD, спецификации и решения по балансу — мои.</span>
+    <span class="en">Battle Chess is a solo project. The others were built by a team of two; for Domain Monsters, Shipyard and Verdigri the concepts, GDDs, specs and balance decisions are mine.</span>
+  </p>
 
   <!-- ===================== DOMAIN MONSTERS ===================== -->
   <section class="project" id="domain-monsters">
     <div class="p-head">
       <div>
-        <div class="p-tag">Карточный PvP · 3 на 3</div>
+        <div class="p-tag"><span class="ru">Карточный PvP · 3 на 3</span><span class="en">Card PvP · 3 vs 3</span></div>
         <h2>Domain Monsters</h2>
-        <p class="lede">Пошаговые бои командами из трёх монстров. Монстров призывают по домену сайта: <code>github.com</code> всегда даёт одного и того же монстра, а редкость зависит от популярности сайта.</p>
+        <p class="lede">
+          <span class="ru">Пошаговые бои командами из трёх монстров. Монстров призывают по домену сайта: <code>github.com</code> всегда даёт одного и того же монстра, а редкость зависит от популярности сайта.</span>
+          <span class="en">Turn-based battles between teams of three monsters. You summon monsters by website domain: <code>github.com</code> always yields the same monster, and rarity depends on how popular the site is.</span>
+        </p>
       </div>
       <dl class="facts">
-        <div><dt>Роль</dt><dd>концепция, боевая и мета-спеки, баланс</dd></div>
-        <div><dt>Платформа</dt><dd>браузер, мобильный ландшафт</dd></div>
-        <div><dt>Стек</dt><dd>TypeScript, React, WebSocket-сервер</dd></div>
-        <div><dt>Режимы</dt><dd>против бота, hot-seat, онлайн 1v1, мета «База»</dd></div>
-        <div><dt>Год</dt><dd>2026</dd></div>
+        <div><dt><span class="ru">Роль</span><span class="en">Role</span></dt><dd><span class="ru">концепция, боевая и мета-спеки, баланс</span><span class="en">concept, battle and meta specs, balance</span></dd></div>
+        <div><dt><span class="ru">Платформа</span><span class="en">Platform</span></dt><dd><span class="ru">браузер, мобильный ландшафт</span><span class="en">browser, mobile landscape</span></dd></div>
+        <div><dt><span class="ru">Стек</span><span class="en">Stack</span></dt><dd>TypeScript, React, WebSocket</dd></div>
+        <div><dt><span class="ru">Режимы</span><span class="en">Modes</span></dt><dd><span class="ru">против бота, hot-seat, онлайн 1v1, мета «База»</span><span class="en">vs bot, hot-seat, online 1v1, “Base” meta</span></dd></div>
+        <div><dt><span class="ru">Год</span><span class="en">Year</span></dt><dd>2026</dd></div>
       </dl>
     </div>
 
     <div class="media">
       <figure>
-        <img src="img/dm-battle.jpg" width="1600" height="900" alt="Экран боя: слева три монстра бота, справа три монстра игрока, в центре лог боя, внизу рука карт с предпросмотром урона">
-        <figcaption><span class="kind">Скриншот прототипа.</span> Бой против бота, сид 42. На каждой карте — предпросмотр урона по формуле из спеки: «Урон: 22 + 8 + 1 = 31». Лог пишет каждый шаг резолва.</figcaption>
+        <img src="img/dm-battle.jpg" width="1600" height="900" alt="Battle screen: three bot monsters on the left, three player monsters on the right, a battle log in the middle and a hand of cards with damage previews at the bottom">
+        <figcaption>
+          <span class="ru"><span class="kind">Скриншот прототипа.</span> Бой против бота, сид 42. На каждой карте — предпросмотр урона по формуле из спеки: «Урон: 22 + 8 + 1 = 31».</span>
+          <span class="en"><span class="kind">Prototype screenshot.</span> Battle vs the bot, seed 42. Every card previews its damage using the spec formula: “Damage: 22 + 8 + 1 = 31”.</span>
+        </figcaption>
       </figure>
       <div class="side">
         <figure>
-          <img src="img/dm-map.jpg" width="1400" height="788" alt="Главное меню в виде карты мира: цитадель, арена, маяк и башни-близнецы как точки входа в режимы">
-          <figcaption><span class="kind">Скриншот.</span> Меню — карта мира: четыре режима как четыре локации.</figcaption>
+          <img src="img/dm-map.jpg" width="1400" height="788" alt="Main menu as a world map with a citadel, an arena, a lighthouse and twin towers as entry points to the modes">
+          <figcaption><span class="ru"><span class="kind">Скриншот.</span> Меню — карта мира: четыре режима как четыре локации.</span><span class="en"><span class="kind">Screenshot.</span> The menu is a world map: four modes as four locations.</span></figcaption>
         </figure>
         <figure>
-          <img src="img/dm-summon.jpg" width="1200" height="675" alt="Экран призыва: введён домен github.com, выпал легендарный монстр Суэзо, 23-й сайт в мире по популярности">
-          <figcaption><span class="kind">Скриншот.</span> Призыв: <code>github.com</code> → легендарный Суэзо, 23-й сайт в мире.</figcaption>
+          <img src="img/dm-summon.jpg" width="1200" height="675" alt="Summon screen: the domain github.com produced the legendary monster Suezo, the 23rd most popular site">
+          <figcaption><span class="ru"><span class="kind">Скриншот.</span> Призыв: <code>github.com</code> → легендарный Суэзо, 23-й сайт в мире.</span><span class="en"><span class="kind">Screenshot.</span> Summon: <code>github.com</code> → legendary Suezo, the world's 23rd site.</span></figcaption>
         </figure>
       </div>
     </div>
 
     <div class="cols">
       <div>
-        <h3>Что я задизайнил</h3>
-        <ul class="did">
+        <h3><span class="ru">Что я задизайнил</span><span class="en">What I designed</span></h3>
+        <ul class="did ru">
           <li><b>Боевую модель:</b> экономика действий GUTS, жертва карт, щиты, статусы и пять архетипов: AGGRO, TEMPO, CONTROL и DEFENSE дают пассивный «чит», пока носитель жив, MIDRANGE — без чита.</li>
-          <li><b>Призыв по домену:</b> вид монстра — по категории сайта, редкость — по рангу популярности, бонусы — детерминированно из хэша домена. Один домен — всегда один результат.</li>
+          <li><b>Призыв по домену:</b> вид монстра — по категории сайта, редкость — по рангу популярности, бонусы — детерминированно из хэша домена.</li>
           <li><b>Мету первой волны:</b> коллекция, тренировка, открытие видовых карт, две валюты с таблицей faucet/sink, награды за бой, минимальный FTUE.</li>
-          <li><b>«Часы колоды»:</b> колода 50 карт и обязательная жертва карты за ход. Убрали затяжные партии и сделали нежизнеспособной чистую оборону — её я переделал в «бруизера».</li>
-          <li><b>Протокол плейтеста:</b> три сценария на 15–20 минут, что наблюдать молча, вопросы после, метрики и заранее оговорённое решение go / поворот / no-go.</li>
+          <li><b>«Часы колоды»:</b> колода 50 карт и обязательная жертва карты за ход — убрали затяжные партии.</li>
+          <li><b>Протокол плейтеста:</b> три сценария на 15–20 минут, что наблюдать молча, вопросы после, метрики и решение go / поворот / no-go.</li>
+        </ul>
+        <ul class="did en">
+          <li><b>The battle model:</b> a GUTS action economy, card sacrifice, shields, statuses and five archetypes — AGGRO, TEMPO, CONTROL and DEFENSE grant a passive “cheat” while the holder lives, MIDRANGE has none.</li>
+          <li><b>Domain summoning:</b> species from the site's category, rarity from its popularity rank, bonuses derived deterministically from the domain hash.</li>
+          <li><b>The first-wave meta:</b> collection, training, unlocking species cards, two currencies with a faucet/sink table, battle rewards, a minimal FTUE.</li>
+          <li><b>The “deck clock”:</b> a 50-card deck and a mandatory card sacrifice each turn — removed drawn-out matches.</li>
+          <li><b>A playtest protocol:</b> three 15–20 minute scenarios, what to observe silently, follow-up questions, metrics and a go / pivot / no-go decision.</li>
         </ul>
       </div>
       <div>
         <div class="spec">
-          <div class="spec-id"><span><b>§7</b> Боевая спецификация · пайплайн урона</span><span>пример расчёта</span></div>
-          <p>Кастер — Голем (AGGRO, в агро-окне), POW 5. Карта POW, база 6. Цель — DEFENSE, щит 3, HP 20.</p>
+          <div class="spec-id"><span><b>§7</b> <span class="ru">Боевая спецификация · пайплайн урона</span><span class="en">Battle spec · damage pipeline</span></span><span class="ru">пример расчёта</span><span class="en">worked example</span></div>
+          <p class="ru">Кастер — Голем (AGGRO, в агро-окне), POW 5. Карта POW, база 6. Цель — DEFENSE, щит 3, HP 20.</p>
+          <p class="en">Caster — Golem (AGGRO, in its aggro window), POW 5. A POW card with base 6. Target — DEFENSE, shield 3, HP 20.</p>
           <div class="tbl">
             <table>
-              <thead><tr><th>Шаг</th><th>Расчёт</th><th class="num">урон</th></tr></thead>
+              <thead><tr><th><span class="ru">Шаг</span><span class="en">Step</span></th><th><span class="ru">Расчёт</span><span class="en">Calculation</span></th><th class="num"><span class="ru">урон</span><span class="en">damage</span></th></tr></thead>
               <tbody>
-                <tr><td>1</td><td>база + стат кастера: 6 + 5</td><td class="num">11</td></tr>
-                <tr><td>2</td><td>бонус AGGRO: +2</td><td class="num">13</td></tr>
-                <tr><td>3</td><td>AGGRO пробивает половину: 6 мимо щита, щит 3 гасит 3</td><td class="num">10</td></tr>
-                <tr><td>4</td><td>DEFENSE режет четверть: floor(10 × 0,75)</td><td class="num">7</td></tr>
-                <tr><td>5</td><td>HP цели: 20 − 7</td><td class="num">13</td></tr>
+                <tr><td>1</td><td><span class="ru">база + стат кастера: 6 + 5</span><span class="en">base + caster stat: 6 + 5</span></td><td class="num">11</td></tr>
+                <tr><td>2</td><td><span class="ru">бонус AGGRO: +2</span><span class="en">AGGRO bonus: +2</span></td><td class="num">13</td></tr>
+                <tr><td>3</td><td><span class="ru">AGGRO пробивает половину: 6 мимо щита, щит 3 гасит 3</span><span class="en">AGGRO pierces half: 6 bypass the shield, shield 3 absorbs 3</span></td><td class="num">10</td></tr>
+                <tr><td>4</td><td><span class="ru">DEFENSE режет четверть: floor(10 × 0,75)</span><span class="en">DEFENSE cuts a quarter: floor(10 × 0.75)</span></td><td class="num">7</td></tr>
+                <tr><td>5</td><td><span class="ru">HP цели: 20 − 7</span><span class="en">target HP: 20 − 7</span></td><td class="num">13</td></tr>
               </tbody>
             </table>
           </div>
         </div>
         <div class="spec">
-          <div class="spec-id"><span><b>§12</b> Краевые случаи · 2 из 26</span><span>каждый покрыт тестом</span></div>
-          <p><b>Одновременный KO.</b> Одна карта с цепной атакой добила последних монстров обеих сторон — побеждает активный игрок, даже если по тексту карты его монстр умер «первым».</p>
-          <p><b>Щит поверх щита.</b> Меньший щит поверх большего не ухудшает и не суммируется: <code>shield = max(5, 3) = 5</code>.</p>
-        </div>
-        <div class="spec">
-          <div class="spec-id"><span><b>§3.1</b> Мета-спека · экономика</span><span>обоснование числа</span></div>
-          <p>Победа даёт +2 Сигила, поражение — 0: <q>поражение не даёт Сигилов — иначе дефицит мёртв</q>. Эссенция капает и за поражение (+10), чтобы проигрывающий новичок всё равно двигал тренировку.</p>
+          <div class="spec-id"><span><b>§12</b> <span class="ru">Краевые случаи · 2 из 26</span><span class="en">Edge cases · 2 of 26</span></span><span class="ru">каждый покрыт тестом</span><span class="en">each covered by a test</span></div>
+          <p class="ru"><b>Одновременный KO.</b> Одна карта с цепной атакой добила последних монстров обеих сторон — побеждает активный игрок.</p>
+          <p class="en"><b>Simultaneous KO.</b> One chain-attack card finishes the last monsters on both sides — the active player wins.</p>
+          <p class="ru"><b>Щит поверх щита.</b> Меньший щит не ухудшает и не суммируется: <code>shield = max(5, 3) = 5</code>.</p>
+          <p class="en"><b>Shield over shield.</b> A smaller shield neither weakens nor stacks: <code>shield = max(5, 3) = 5</code>.</p>
         </div>
       </div>
     </div>
 
     <div class="data">
       <div class="data-head">
-        <h4>Все 6 команд вошли в коридор винрейта 45–55% на трёх независимых сидах</h4>
-        <p>Симуляция greedy-бот против greedy-бота: 1000 партий на каждую из 15 пар команд, сиды 7, 42 и 99. Полыми маркерами — первое включение «часов колоды», до правок.</p>
+        <h4><span class="ru">Все 6 команд вошли в коридор винрейта 45–55% на трёх независимых сидах</span><span class="en">All 6 teams landed in the 45–55% win-rate corridor across three independent seeds</span></h4>
+        <p><span class="ru">Greedy-бот против greedy-бота: 1000 партий на каждую из 15 пар команд, сиды 7, 42 и 99. Полыми маркерами — до правок.</span><span class="en">Greedy bot vs greedy bot: 1,000 matches for each of the 15 team pairs, seeds 7, 42 and 99. Hollow markers show the state before the fixes.</span></p>
       </div>
       <div class="legend" aria-hidden="true">
-        <span><i class="sw fill"></i>после правок v2.3, по сидам</span>
-        <span><i class="sw hollow"></i>до правок</span>
-        <span><i class="sw band"></i>целевой коридор 45–55%</span>
+        <span><i class="sw fill"></i><span class="ru">после правок v2.3, по сидам</span><span class="en">after the v2.3 fixes, per seed</span></span>
+        <span><i class="sw hollow"></i><span class="ru">до правок</span><span class="en">before the fixes</span></span>
+        <span><i class="sw band"></i><span class="ru">целевой коридор 45–55%</span><span class="en">target corridor 45–55%</span></span>
       </div>
-      <div class="chart" id="wr-chart" role="img" aria-label="Винрейт шести команд по трём сидам: все значения от 45,5 до 54,7 процента. До правок Стражи рощи имели 3,5–7,5 процента, Дикие клыки — 68 процентов."></div>
+      <div class="chart" id="wr-chart" role="img" aria-label="Win rate of six teams across three seeds: all between 45.5 and 54.7 percent."></div>
       <details>
-        <summary>Таблица значений</summary>
+        <summary><span class="ru">Таблица значений</span><span class="en">Data table</span></summary>
         <div class="tbl">
           <table>
-            <thead><tr><th>Команда</th><th class="num">сид 7</th><th class="num">сид 42</th><th class="num">сид 99</th><th class="num">до правок</th></tr></thead>
+            <thead><tr><th><span class="ru">Команда</span><span class="en">Team</span></th><th class="num"><span class="ru">сид</span><span class="en">seed</span> 7</th><th class="num"><span class="ru">сид</span><span class="en">seed</span> 42</th><th class="num"><span class="ru">сид</span><span class="en">seed</span> 99</th><th class="num"><span class="ru">до правок</span><span class="en">before</span></th></tr></thead>
             <tbody id="wr-table"></tbody>
           </table>
         </div>
       </details>
       <div class="kpis">
-        <div><b>65% → 0%</b><span>боёв до лимита раундов в худшем матчапе после «часов колоды»</span></div>
-        <div><b>8–11</b><span>раундов — медиана боя при дизайн-цели 9–12</span></div>
-        <div><b>97–100%</b><span>боёв решаются нокаутом, а не опустевшей колодой</span></div>
+        <div><b>65% → 0%</b><span class="ru">боёв до лимита раундов в худшем матчапе после «часов колоды»</span><span class="en">of matches hitting the round cap in the worst matchup, after the deck clock</span></div>
+        <div><b>8–11</b><span class="ru">раундов — медиана боя при дизайн-цели 9–12</span><span class="en">rounds — median match length vs a 9–12 design target</span></div>
+        <div><b>97–100%</b><span class="ru">боёв решаются нокаутом, а не опустевшей колодой</span><span class="en">of matches end in a knockout, not an empty deck</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== ВЕРФЬ ===================== -->
-  <section class="project" id="verf">
+  <!-- ===================== BATTLE CHESS ===================== -->
+  <section class="project" id="battle-chess">
     <div class="p-head">
       <div>
-        <div class="p-tag">Симулятор управления · колони-сим</div>
-        <h2>Верфь</h2>
-        <p class="lede">Космическая верфь: принимаешь корабли на ремонт, решаешь, чинить узел в цеху или купить готовый, нанимаешь специалистов и достраиваешь станцию, не уходя в банкротство.</p>
+        <div class="p-tag"><span class="ru">Шахматы · порт классики 1991 года</span><span class="en">Chess · a port of a 1991 classic</span></div>
+        <h2>Battle Chess</h2>
+        <p class="lede">
+          <span class="ru">Шахматы для Windows в духе классической Battle Chess: 2D-доска, нарисованная кодом, и режим, который кадр в кадр воспроизводит Battle Chess для Macintosh 1991 года — ходьбу фигур, ладью-голема и все сцены поединков.</span>
+          <span class="en">Windows chess in the spirit of the classic Battle Chess: a code-drawn 2D board plus a mode that reproduces the 1991 Macintosh Battle Chess frame for frame — piece walks, the rook golem and every combat scene.</span>
+        </p>
       </div>
       <dl class="facts">
-        <div><dt>Роль</dt><dd>концепция, GDD, технический спек, экономика</dd></div>
-        <div><dt>Движок</dt><dd>Unity 6, ранее прототип на Godot</dd></div>
-        <div><dt>Арт</dt><dd>модели и анимации из Blender по скриптам</dd></div>
-        <div><dt>Референс</dt><dd>RimWorld-подобная станция, камера 45°</dd></div>
-        <div><dt>Год</dt><dd>2026</dd></div>
+        <div><dt><span class="ru">Роль</span><span class="en">Role</span></dt><dd><span class="ru">дизайн и разработка, личный проект</span><span class="en">design and development, solo project</span></dd></div>
+        <div><dt><span class="ru">Стек</span><span class="en">Stack</span></dt><dd><span class="ru">C#, .NET 9, WinForms; инструменты разбора — Python</span><span class="en">C#, .NET 9, WinForms; research tools in Python</span></dd></div>
+        <div><dt><span class="ru">Релиз</span><span class="en">Release</span></dt><dd><span class="ru">1.0.0, один exe без установки .NET</span><span class="en">1.0.0, a single exe, no .NET install</span></dd></div>
+        <div><dt><span class="ru">Код</span><span class="en">Code</span></dt><dd><a href="https://github.com/Lilbonner/battle-chess">github.com/Lilbonner/battle-chess</a></dd></div>
+        <div><dt><span class="ru">Год</span><span class="en">Year</span></dt><dd>2026</dd></div>
+      </dl>
+    </div>
+
+    <div class="media single">
+      <figure>
+        <img src="img/bc-board.jpg" width="1280" height="772" alt="Chess board mid-game with a move list in Russian notation and captured pieces on the side panel">
+        <figcaption><span class="ru"><span class="kind">Скриншот игры, 2D-доска.</span> Фигуры и интерфейс нарисованы кодом; справа взятые фигуры и ходы в русской нотации. Графику оригинала здесь не показываю — она принадлежит Interplay.</span><span class="en"><span class="kind">Game screenshot, 2D board.</span> Pieces and UI are drawn in code; the side panel shows captures and moves in Russian notation. The original game's art is not shown here — it belongs to Interplay.</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3><span class="ru">Что сделано</span><span class="en">What I built</span></h3>
+        <ul class="did ru">
+          <li><b>Все правила шахмат:</b> рокировка, взятие на проходе, превращение пешки, мат, пат и ничьи — по правилу 50 ходов, троекратному повторению и недостатку материала.</li>
+          <li><b>Компьютерный соперник:</b> альфа-бета-поиск с итеративным углублением, пять уровней — от «Новичка» до «Гроссмейстера».</li>
+          <li><b>Режимы:</b> за белых, за чёрных, два игрока и компьютер против компьютера. Для двух игроков доска с анимацией поворачивается к тому, чей ход.</li>
+          <li><b>Порт оригинала:</b> все 35 сцен поединков с таймингом 10 кадров в секунду и звуками исходной высоты; для 26 пар фигур — до 4 дополнительных боёв, собранных по правилам движка оригинала из его же последовательностей.</li>
+          <li><b>Инструменты проверки:</b> режимы командной строки проигрывают партии и сохраняют кадры анимаций без окна — графику можно проверять без ручной игры.</li>
+        </ul>
+        <ul class="did en">
+          <li><b>Every chess rule:</b> castling, en passant, promotion, checkmate, stalemate and draws by the 50-move rule, threefold repetition and insufficient material.</li>
+          <li><b>A computer opponent:</b> alpha-beta search with iterative deepening, five levels from Novice to Grandmaster.</li>
+          <li><b>Modes:</b> play as white, as black, two players, or computer vs computer. In two-player mode the board animates round to face whoever moves next.</li>
+          <li><b>A port of the original:</b> all 35 combat scenes at the original 10 frames per second with sounds at their original pitch; for 26 piece pairs, up to 4 extra fights assembled by the original engine's rules from its own sequences.</li>
+          <li><b>Verification tools:</b> command-line modes play games and capture animation frames headless, so graphics can be checked without playing by hand.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="spec">
+          <div class="spec-id"><span><b><span class="ru">Разбор оригинала</span><span class="en">Reverse engineering</span></b> <span class="ru">· от образа диска до кадра</span><span class="en">· from disk image to frame</span></span><span class="ru">описано в docs/FORMAT.md</span><span class="en">documented in docs/FORMAT.md</span></div>
+          <div class="tbl">
+            <table class="ru">
+              <thead><tr><th>Шаг</th><th>Что делает</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>извлекает файлы и ресурсы из тома HFS образа диска Macintosh</td></tr>
+                <tr><td>2</td><td>дизассемблирует сегменты кода 68k с именами функций MacsBug</td></tr>
+                <tr><td>3</td><td>распаковывает и разбирает блоки анимаций — позы, циклы ходьбы, звуки</td></tr>
+                <tr><td>4</td><td>симулирует логику поединков оригинала и выгружает 35 сцен покадрово</td></tr>
+                <tr><td>5</td><td>рантайм на C# проигрывает сцены и ходы по правилам движка оригинала</td></tr>
+              </tbody>
+            </table>
+            <table class="en">
+              <thead><tr><th>Step</th><th>What it does</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>extracts files and resources from the Macintosh disk image's HFS volume</td></tr>
+                <tr><td>2</td><td>disassembles the 68k code segments with MacsBug function names</td></tr>
+                <tr><td>3</td><td>decompresses and parses the animation blocks — poses, walk cycles, sounds</td></tr>
+                <tr><td>4</td><td>simulates the original combat logic and exports all 35 scenes frame by frame</td></tr>
+                <tr><td>5</td><td>a C# runtime plays scenes and moves by the original engine's rules</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ru" style="margin-top:10px">Ресурсы игры не входят ни в репозиторий, ни в релиз: режим работает только с ресурсами из своей копии игры.</p>
+          <p class="en" style="margin-top:10px">No game assets ship in the repository or the release: the mode only works with assets from your own copy of the game.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NIGHT TRAIN ===================== -->
+  <section class="project" id="night-train">
+    <div class="p-head">
+      <div>
+        <div class="p-tag"><span class="ru">Кооперативное выживание · 1–4 игрока</span><span class="en">Co-op survival · 1–4 players</span></div>
+        <h2><span class="ru">Ночной поезд</span><span class="en">Night Train</span></h2>
+        <p class="lede">
+          <span class="ru">Поезд из открытых платформ едет ночью через лес, из темноты лезут твари. Днём — стоянка на станции: заработать, купить, починить и успеть на поезд до отправления.</span>
+          <span class="en">A train of open flatcars rides through a forest at night while creatures crawl out of the dark. By day it stops at a station: earn, buy, repair — and make it back on board before departure.</span>
+        </p>
+      </div>
+      <dl class="facts">
+        <div><dt><span class="ru">Роль</span><span class="en">Role</span></dt><dd><span class="ru">разработка в команде из двух, 88 из 150 коммитов</span><span class="en">development in a team of two, 88 of 150 commits</span></dd></div>
+        <div><dt><span class="ru">Движок</span><span class="en">Engine</span></dt><dd>Unity 6, URP</dd></div>
+        <div><dt><span class="ru">Сеть</span><span class="en">Network</span></dt><dd>Netcode for GameObjects</dd></div>
+        <div><dt><span class="ru">Ввод</span><span class="en">Input</span></dt><dd><span class="ru">клавиатура и геймпад, Input System</span><span class="en">keyboard and gamepad, Input System</span></dd></div>
+        <div><dt><span class="ru">Год</span><span class="en">Year</span></dt><dd>2026</dd></div>
       </dl>
     </div>
 
     <div class="media">
       <figure>
-        <img src="img/sy-concept.jpg" width="1500" height="844" alt="Концепт станции верфи сверху под 45 градусов: доки с кораблями, цеха, жилые блоки и панель заказов">
-        <figcaption><span class="kind">Целевой визуальный концепт</span> — арт-референс для команды, не скриншот игры.</figcaption>
+        <img src="img/nt-train.jpg" width="1500" height="844" alt="Concept art of a night train: a locomotive and open flatcars with lanterns, searchlights and cargo">
+        <figcaption><span class="ru"><span class="kind">AI-концепт</span> поезда — визуальный референс для команды, не скриншот игры.</span><span class="en"><span class="kind">AI concept art</span> of the train — a visual reference for the team, not a game screenshot.</span></figcaption>
       </figure>
       <div class="side">
         <figure>
-          <img src="img/sy-room.jpg" width="1000" height="656" alt="Модель комнаты станции: док с катером, цех, рабочие">
-          <figcaption><span class="kind">Модели проекта.</span> Кит комнат и док с катером — Blender-пайплайн.</figcaption>
+          <img src="img/nt-loco.jpg" width="1000" height="786" alt="Low-poly 3D model of a dark blue steam locomotive">
+          <figcaption><span class="ru"><span class="kind">3D-модель</span> паровоза для игры.</span><span class="en"><span class="kind">3D model</span> of the locomotive for the game.</span></figcaption>
         </figure>
         <figure>
-          <img src="img/sy-crew.jpg" width="1100" height="481" alt="Модель рабочего в жёлтом комбинезоне с разных ракурсов и в рабочих позах">
-          <figcaption><span class="kind">Модели проекта.</span> Рабочий: риг и 7 анимационных клипов.</figcaption>
+          <img src="img/nt-wolf.jpg" width="1000" height="667" alt="Concept art of dark low-poly wolves with glowing eyes">
+          <figcaption><span class="ru"><span class="kind">AI-концепт</span> врага: волк.</span><span class="en"><span class="kind">AI concept art</span> of an enemy: the wolf.</span></figcaption>
         </figure>
       </div>
     </div>
 
     <div class="cols">
       <div>
-        <h3>Кор-луп</h3>
-        <ul class="flow" aria-label="Кор-луп верфи">
-          <li>приём корабля</li><li class="arrow">→</li>
-          <li>кран снимает узел</li><li class="arrow">→</li>
-          <li class="key">ремонт или покупка?</li><li class="arrow">→</li>
-          <li>логистика</li><li class="arrow">→</li>
-          <li>цех</li><li class="arrow">→</li>
-          <li>установка</li><li class="arrow">→</li>
-          <li>сдача и оплата</li>
+        <h3><span class="ru">Цикл рейса</span><span class="en">Run loop</span></h3>
+        <ul class="flow ru" aria-label="Цикл рейса">
+          <li>ночь в пути, нападения</li><li class="arrow">→</li>
+          <li>рассвет</li><li class="arrow">→</li>
+          <li>стоянка на станции</li><li class="arrow">→</li>
+          <li class="key">гудок за 15 с</li><li class="arrow">→</li>
+          <li>отправление</li>
         </ul>
-        <h3 style="margin-top:30px">Что я задизайнил</h3>
-        <ul class="did">
-          <li><b>Решение в центре лупа:</b> ремонт дешевле, но занимает цех и специалиста; покупка быстрая, но при постоянном использовании уводит в убыток. Так покупка остаётся инструментом для срочных заказов.</li>
-          <li><b>Общие ограничения мощности:</b> кран, логист, цеха и специалисты делятся между заказами; корпусники — между ремонтом и стройкой.</li>
-          <li><b>Системы глубины:</b> усталость и отдых, дефекты уставших специалистов, испытательный стенд с повторной проверкой, отложенные гарантийные штрафы.</li>
-          <li><b>Рост станции:</b> комнаты, секции корпуса 3×3, снос с возвратом 20%, найм под койки.</li>
+        <ul class="flow en" aria-label="Run loop">
+          <li>night ride, attacks</li><li class="arrow">→</li>
+          <li>dawn</li><li class="arrow">→</li>
+          <li>station stop</li><li class="arrow">→</li>
+          <li class="key">whistle 15 s ahead</li><li class="arrow">→</li>
+          <li>departure</li>
+        </ul>
+        <h3 style="margin-top:30px"><span class="ru">Что в игре</span><span class="en">What's in the game</span></h3>
+        <ul class="did ru">
+          <li><b>Отправление как напряжение:</b> гудок звучит за 15 секунд до отправления, потом поезд 8 секунд разгоняется — догнать ещё можно. Опоздавший теряет всё из рук и оглушён 15 секунд, напарник может поднять его за 2.</li>
+          <li><b>Кооп 1–4 игрока</b> на Netcode for GameObjects: маршрут выбирает хост и рассылает остальным.</li>
+          <li><b>Оборудование на платформах</b> ставится по сетке с поворотом: прожектор, генератор, тендер, фонарный столб, лекарь, котёл, дробилка, кран — у каждого своя цена и роль.</li>
+          <li><b>Числа в конфигах:</b> все параметры — в ScriptableObject; сцены, префабы и материалы собираются кодом из редактора одной командой.</li>
+        </ul>
+        <ul class="did en">
+          <li><b>Departure as tension:</b> the whistle sounds 15 seconds before departure, then the train takes 8 seconds to speed up — you can still catch it. Miss it and you drop everything you carry and are stunned for 15 seconds; a teammate can revive you in 2.</li>
+          <li><b>Co-op for 1–4 players</b> on Netcode for GameObjects: the host picks the route and syncs it to everyone.</li>
+          <li><b>Flatcar equipment</b> placed and rotated on a grid: searchlight, generator, tender, lamp post, medic, cauldron, crusher, crane — each with its own price and role.</li>
+          <li><b>Numbers in config:</b> every parameter lives in ScriptableObjects; scenes, prefabs and materials are generated by an editor tool with one command.</li>
         </ul>
       </div>
       <div>
         <div class="spec">
-          <div class="spec-id"><span><b>Документы</b> проекта</span><span>поддерживаются вместе с кодом</span></div>
+          <div class="spec-id"><span><b><span class="ru">Длительность стоянки</span><span class="en">Station stop duration</span></b></span><span class="ru">из документации проекта</span><span class="en">from the project docs</span></div>
+          <div class="formula">T = (40 + 30 · <span class="ru">платформ</span><span class="en">flatcars</span>) × k × s</div>
+          <p class="ru"><code>k</code> = 1 / 0,6 / 0,5 / 0,45 для 1–4 игроков; <code>s</code> = 1 / 1,15 / 1,3 для посёлка, городка и города. Чем больше поезд — тем дольше стоянка, чем больше игроков — тем она короче.</p>
+          <p class="en"><code>k</code> = 1 / 0.6 / 0.5 / 0.45 for 1–4 players; <code>s</code> = 1 / 1.15 / 1.3 for a village, town and city. A bigger train gets a longer stop; more players get a shorter one.</p>
+        </div>
+        <div class="spec">
+          <div class="spec-id"><span><b><span class="ru">Оборудование</span><span class="en">Equipment</span></b> <span class="ru">· срез</span><span class="en">· excerpt</span></span><span class="ru">цены из конфига игры</span><span class="en">prices from the game config</span></div>
           <div class="tbl">
             <table>
+              <thead><tr><th><span class="ru">Предмет</span><span class="en">Item</span></th><th class="num"><span class="ru">монеты</span><span class="en">coins</span></th><th><span class="ru">роль</span><span class="en">role</span></th></tr></thead>
               <tbody>
-                <tr><td>GDD</td><td>концепция, экономика, кран, корпус, персонал, рост, мир, отброшенные идеи</td></tr>
-                <tr><td>Тех-спек v1</td><td>модель состояния, команды, константы, формулы, порядок тика</td></tr>
-                <tr><td>Патч 00</td><td>строительство станции, расширение, снос, жильё</td></tr>
-                <tr><td>Патч 01</td><td>пересмотр модели производства, варианты A / B / C</td></tr>
+                <tr><td><span class="ru">прожектор</span><span class="en">searchlight</span></td><td class="num">8</td><td><span class="ru">сам наводится и жжёт тварей, питается от батарей</span><span class="en">aims itself and burns creatures, runs on batteries</span></td></tr>
+                <tr><td><span class="ru">генератор</span><span class="en">generator</span></td><td class="num">14</td><td><span class="ru">запас батарей для прожекторов</span><span class="en">stores batteries for the searchlights</span></td></tr>
+                <tr><td><span class="ru">тендер</span><span class="en">tender</span></td><td class="num">6</td><td><span class="ru">уголь и вода; может укоротить ночь</span><span class="en">coal and water; can shorten the night</span></td></tr>
+                <tr><td><span class="ru">фонарный столб</span><span class="en">lamp post</span></td><td class="num">10</td><td><span class="ru">круг света — безопасный участок платформы</span><span class="en">a circle of light — a safe patch of the flatcar</span></td></tr>
+                <tr><td><span class="ru">лекарь</span><span class="en">medic</span></td><td class="num">18</td><td><span class="ru">ночью лечит в радиусе 2,5 м</span><span class="en">heals within 2.5 m at night</span></td></tr>
+                <tr><td><span class="ru">котёл</span><span class="en">cauldron</span></td><td class="num">15</td><td><span class="ru">грибы + травы → похлёбка</span><span class="en">mushrooms + herbs → stew</span></td></tr>
               </tbody>
             </table>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SHIPYARD ===================== -->
+  <section class="project" id="verf">
+    <div class="p-head">
+      <div>
+        <div class="p-tag"><span class="ru">Симулятор управления · колони-сим</span><span class="en">Management sim · colony sim</span></div>
+        <h2><span class="ru">Верфь</span><span class="en">Shipyard</span></h2>
+        <p class="lede">
+          <span class="ru">Космическая верфь: принимаешь корабли на ремонт, решаешь, чинить узел в цеху или купить готовый, нанимаешь специалистов и достраиваешь станцию, не уходя в банкротство.</span>
+          <span class="en">A space shipyard: take ships in for repair, decide whether to fix a part in the workshop or buy a new one, hire specialists and grow the station without going bankrupt.</span>
+        </p>
+      </div>
+      <dl class="facts">
+        <div><dt><span class="ru">Роль</span><span class="en">Role</span></dt><dd><span class="ru">концепция, GDD, технический спек, экономика</span><span class="en">concept, GDD, technical spec, economy</span></dd></div>
+        <div><dt><span class="ru">Движок</span><span class="en">Engine</span></dt><dd><span class="ru">Unity 6, ранее прототип на Godot</span><span class="en">Unity 6, earlier prototype in Godot</span></dd></div>
+        <div><dt><span class="ru">Арт</span><span class="en">Art</span></dt><dd><span class="ru">модели и анимации из Blender по скриптам</span><span class="en">script-built Blender models and animations</span></dd></div>
+        <div><dt><span class="ru">Референс</span><span class="en">Reference</span></dt><dd><span class="ru">станция в духе RimWorld, камера 45°</span><span class="en">RimWorld-style station, 45° camera</span></dd></div>
+        <div><dt><span class="ru">Год</span><span class="en">Year</span></dt><dd>2026</dd></div>
+      </dl>
+    </div>
+
+    <div class="media">
+      <figure>
+        <img src="img/sy-concept.jpg" width="1500" height="844" alt="Top-down 45-degree concept of the shipyard station: docks with ships, workshops, living quarters and an orders panel">
+        <figcaption><span class="ru"><span class="kind">Целевой визуальный концепт</span> — арт-референс для команды, не скриншот игры.</span><span class="en"><span class="kind">Target visual concept</span> — an art reference for the team, not a game screenshot.</span></figcaption>
+      </figure>
+      <div class="side">
+        <figure>
+          <img src="img/sy-room.jpg" width="1000" height="656" alt="Station room model: a dock with a cutter, a workshop, workers">
+          <figcaption><span class="ru"><span class="kind">Модели проекта.</span> Кит комнат и док с катером.</span><span class="en"><span class="kind">Project models.</span> The room kit and a dock with a cutter.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="img/sy-crew.jpg" width="1100" height="481" alt="Worker model in a yellow suit from several angles and poses">
+          <figcaption><span class="ru"><span class="kind">Модели проекта.</span> Рабочий: риг и 7 анимационных клипов.</span><span class="en"><span class="kind">Project models.</span> The worker: rig and 7 animation clips.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3><span class="ru">Кор-луп</span><span class="en">Core loop</span></h3>
+        <ul class="flow ru" aria-label="Кор-луп">
+          <li>приём корабля</li><li class="arrow">→</li><li>кран снимает узел</li><li class="arrow">→</li>
+          <li class="key">ремонт или покупка?</li><li class="arrow">→</li><li>логистика</li><li class="arrow">→</li>
+          <li>цех</li><li class="arrow">→</li><li>установка</li><li class="arrow">→</li><li>сдача и оплата</li>
+        </ul>
+        <ul class="flow en" aria-label="Core loop">
+          <li>ship arrives</li><li class="arrow">→</li><li>crane removes the part</li><li class="arrow">→</li>
+          <li class="key">repair or buy?</li><li class="arrow">→</li><li>logistics</li><li class="arrow">→</li>
+          <li>workshop</li><li class="arrow">→</li><li>install</li><li class="arrow">→</li><li>delivery and payment</li>
+        </ul>
+        <h3 style="margin-top:30px"><span class="ru">Что я задизайнил</span><span class="en">What I designed</span></h3>
+        <ul class="did ru">
+          <li><b>Решение в центре лупа:</b> ремонт дешевле, но занимает цех и специалиста; покупка быстрая, но при постоянном использовании уводит в убыток.</li>
+          <li><b>Общие ограничения мощности:</b> кран, логист, цеха и специалисты делятся между заказами.</li>
+          <li><b>Системы глубины:</b> усталость, дефекты уставших специалистов, испытательный стенд, отложенные гарантийные штрафы.</li>
+          <li><b>Рост станции:</b> комнаты, секции корпуса 3×3, снос с возвратом 20%, найм под койки.</li>
+        </ul>
+        <ul class="did en">
+          <li><b>A decision at the heart of the loop:</b> repair is cheaper but ties up a workshop and a specialist; buying is fast but drives you into a loss if you rely on it.</li>
+          <li><b>Shared capacity limits:</b> the crane, the logistician, workshops and specialists are split across orders.</li>
+          <li><b>Systems for depth:</b> fatigue, defects from tired specialists, a test bench, delayed warranty penalties.</li>
+          <li><b>Station growth:</b> rooms, 3×3 hull sections, demolition with a 20% refund, hiring tied to bunks.</li>
+        </ul>
+      </div>
+      <div>
         <div class="spec">
-          <div class="spec-id"><span><b>Как читать противоречия</b> между версиями</span><span>из карты документации</span></div>
-          <p>Старый спек исключает растущий корпус из v1 — патч 00 включает расширение секциями. Исходный GDD объяснял производство возрастающей отдачей — патч 01 исправляет это на постоянную отдачу при неограниченном спросе.</p>
+          <div class="spec-id"><span><b><span class="ru">Документы</span><span class="en">Project documents</span></b></span><span class="ru">поддерживаются вместе с кодом</span><span class="en">maintained alongside the code</span></div>
+          <div class="tbl">
+            <table class="ru"><tbody>
+              <tr><td>GDD</td><td>концепция, экономика, кран, корпус, персонал, рост, мир, отброшенные идеи</td></tr>
+              <tr><td>Тех-спек v1</td><td>модель состояния, команды, константы, формулы, порядок тика</td></tr>
+              <tr><td>Патч 00</td><td>строительство станции, расширение, снос, жильё</td></tr>
+              <tr><td>Патч 01</td><td>пересмотр модели производства, варианты A / B / C</td></tr>
+            </tbody></table>
+            <table class="en"><tbody>
+              <tr><td>GDD</td><td>concept, economy, crane, hull, staff, growth, world, discarded ideas</td></tr>
+              <tr><td>Tech spec v1</td><td>state model, commands, constants, formulas, tick order</td></tr>
+              <tr><td>Patch 00</td><td>station construction, expansion, demolition, housing</td></tr>
+              <tr><td>Patch 01</td><td>production model revision, options A / B / C</td></tr>
+            </tbody></table>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="data">
       <div class="data-head">
-        <h4>Ни одного банкротства на старте после правки выдачи заказов и цен</h4>
-        <p>20 сидов × 90 игровых дней на каждую стратегию автоигрока. Изменения: корабль приходит того класса, который станция способна обслужить; перенастроены награда за катер и цены замен.</p>
+        <h4><span class="ru">Ни одного банкротства на старте после правки выдачи заказов и цен</span><span class="en">Zero early bankruptcies after reworking order arrival and prices</span></h4>
+        <p><span class="ru">20 сидов × 90 игровых дней на каждую стратегию автоигрока. Корабль приходит того класса, который станция способна обслужить; перенастроены награда и цены замен.</span><span class="en">20 seeds × 90 in-game days per autoplayer strategy. Ships now arrive in a class the station can service; rewards and replacement prices were retuned.</span></p>
       </div>
       <div class="tbl">
         <table>
-          <thead><tr><th>Стартовая стратегия</th><th class="num">банкротств из 20</th><th class="num">сдано кораблей</th><th class="num">простой причалов</th></tr></thead>
+          <thead><tr><th><span class="ru">Стартовая стратегия</span><span class="en">Starting strategy</span></th><th class="num"><span class="ru">банкротств из 20</span><span class="en">bankruptcies of 20</span></th><th class="num"><span class="ru">сдано кораблей</span><span class="en">ships delivered</span></th><th class="num"><span class="ru">простой причалов</span><span class="en">idle docks</span></th></tr></thead>
           <tbody>
-            <tr><td>ремонт без испытаний</td><td class="num">5 → <span class="delta">0</span></td><td class="num">17,8 → 89,5</td><td class="num">90,2% → 54,4%</td></tr>
-            <tr><td>испытание каждого корабля</td><td class="num">8 → <span class="delta">0</span></td><td class="num">16,3 → 85,7</td><td class="num">83,5% → 36,4%</td></tr>
-            <tr><td>покупка замен</td><td class="num">12 → <span class="delta">0</span></td><td class="num">16,4 → 89,5</td><td class="num">96,2% → 83,4%</td></tr>
+            <tr><td><span class="ru">ремонт без испытаний</span><span class="en">repair, no testing</span></td><td class="num">5 → <span class="delta">0</span></td><td class="num">17.8 → 89.5</td><td class="num">90.2% → 54.4%</td></tr>
+            <tr><td><span class="ru">испытание каждого корабля</span><span class="en">test every ship</span></td><td class="num">8 → <span class="delta">0</span></td><td class="num">16.3 → 85.7</td><td class="num">83.5% → 36.4%</td></tr>
+            <tr><td><span class="ru">покупка замен</span><span class="en">buy replacements</span></td><td class="num">12 → <span class="delta">0</span></td><td class="num">16.4 → 89.5</td><td class="num">96.2% → 83.4%</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">Проверка роста на 180 дней: 10 из 10 прогонов без банкротств прошли путь через реальные стройки до фрегатов и сухогрузов, первый фрегат — около 137-го дня. <span class="muted">Открытый вопрос для следующей итерации: испытательный стенд всё ещё невыгоден как первая постройка.</span></p>
+      <p class="note"><span class="ru">10 из 10 прогонов на 180 дней без банкротств дошли до фрегатов и сухогрузов, первый фрегат — около 137-го дня. <span class="muted">Открытый вопрос: испытательный стенд всё ещё невыгоден как первая постройка.</span></span><span class="en">10 of 10 180-day runs reached frigates and freighters without bankruptcy; the first frigate arrives around day 137. <span class="muted">Open question: the test bench is still a poor first build.</span></span></p>
     </div>
   </section>
 
-  <!-- ===================== ВЕРДИГРИ ===================== -->
+  <!-- ===================== VERDIGRI ===================== -->
   <section class="project" id="verdigri">
     <div class="p-head">
       <div>
-        <div class="p-tag">Детективная point-and-click адвенчура</div>
-        <h2>Вердигри</h2>
-        <p class="lede">Детектив Майя касается потерянного предмета и видит его прошлое. Каждый эпизод — отдельное дело, в котором игрок решает, вернуть ли предмет владельцу и восстановить ли правду.</p>
+        <div class="p-tag"><span class="ru">Детективная point-and-click адвенчура</span><span class="en">Point-and-click detective adventure</span></div>
+        <h2><span class="ru">Вердигри</span><span class="en">Verdigri</span></h2>
+        <p class="lede">
+          <span class="ru">Детектив Майя касается потерянного предмета и видит его прошлое. Каждый эпизод — отдельное дело: вернуть ли предмет владельцу и восстановить ли правду.</span>
+          <span class="en">Detective Maya touches a lost object and sees its past. Each episode is a separate case: whether to return the object to its owner, and whether to restore the truth.</span>
+        </p>
       </div>
       <dl class="facts">
-        <div><dt>Роль</dt><dd>концепция, нарративный и технический дизайн</dd></div>
-        <div><dt>Движок</dt><dd>свой: Rust + Bevy, редактор эпизодов</dd></div>
-        <div><dt>Эпизоды</dt><dd>3 эпизода, языки ru и en</dd></div>
-        <div><dt>Год</dt><dd>2026</dd></div>
+        <div><dt><span class="ru">Роль</span><span class="en">Role</span></dt><dd><span class="ru">концепция, нарративный и технический дизайн</span><span class="en">concept, narrative and technical design</span></dd></div>
+        <div><dt><span class="ru">Движок</span><span class="en">Engine</span></dt><dd><span class="ru">свой: Rust + Bevy, редактор эпизодов</span><span class="en">custom: Rust + Bevy, episode editor</span></dd></div>
+        <div><dt><span class="ru">Эпизоды</span><span class="en">Episodes</span></dt><dd><span class="ru">3 эпизода, ru и en</span><span class="en">3 episodes, ru and en</span></dd></div>
+        <div><dt><span class="ru">Год</span><span class="en">Year</span></dt><dd>2026</dd></div>
       </dl>
     </div>
 
     <div class="media">
       <figure>
-        <img src="img/vd-intro.jpg" width="1500" height="837" alt="Катсцена: детектив в плаще стоит на ночном пирсе под дождём, вдалеке маяк">
-        <figcaption><span class="kind">Арт прототипа.</span> Катсцена-хук эпизода 2 «Компас смотрителя маяка».</figcaption>
+        <img src="img/vd-intro.jpg" width="1500" height="837" alt="Cutscene: a detective in a coat on a rainy night pier, a lighthouse in the distance">
+        <figcaption><span class="ru"><span class="kind">Арт прототипа.</span> Катсцена-хук эпизода 2 «Компас смотрителя маяка».</span><span class="en"><span class="kind">Prototype art.</span> Hook cutscene of episode 2, “The Lighthouse Keeper's Compass”.</span></figcaption>
       </figure>
       <div class="side">
         <figure>
-          <img src="img/vd-shop.jpg" width="1000" height="559" alt="Фон сцены: лавка диковин с полками, лампами и склянками">
-          <figcaption><span class="kind">Арт прототипа.</span> Сцена «лавка диковин».</figcaption>
+          <img src="img/vd-shop.jpg" width="1000" height="559" alt="Scene background: a curio shop with shelves, lamps and jars">
+          <figcaption><span class="ru"><span class="kind">Арт прототипа.</span> Сцена «лавка диковин».</span><span class="en"><span class="kind">Prototype art.</span> The curio shop scene.</span></figcaption>
         </figure>
         <figure>
-          <img src="img/vd-vision.jpg" width="1000" height="558" alt="Крупный план: рука держит медальон с зелёным свечением">
-          <figcaption><span class="kind">Арт прототипа.</span> Медальон — механика «Зрения».</figcaption>
+          <img src="img/vd-vision.jpg" width="1000" height="558" alt="Close-up: a hand holding a glowing green medallion">
+          <figcaption><span class="ru"><span class="kind">Арт прототипа.</span> Медальон — механика «Зрения».</span><span class="en"><span class="kind">Prototype art.</span> The medallion — the “Sight” mechanic.</span></figcaption>
         </figure>
       </div>
     </div>
 
     <div class="cols">
       <div>
-        <h3>Формула эпизода</h3>
-        <ul class="flow" aria-label="Формула эпизода">
-          <li>потерянный предмет</li><li class="arrow">→</li>
-          <li>видение</li><li class="arrow">→</li>
-          <li>опознание владельца</li><li class="arrow">→</li>
-          <li>починка</li><li class="arrow">→</li>
-          <li>расследование</li><li class="arrow">→</li>
-          <li class="key">дело: 3 исхода</li>
+        <h3><span class="ru">Формула эпизода</span><span class="en">Episode formula</span></h3>
+        <ul class="flow ru" aria-label="Формула эпизода">
+          <li>потерянный предмет</li><li class="arrow">→</li><li>видение</li><li class="arrow">→</li>
+          <li>опознание владельца</li><li class="arrow">→</li><li>починка</li><li class="arrow">→</li>
+          <li>расследование</li><li class="arrow">→</li><li class="key">дело: 3 исхода</li>
         </ul>
-        <h3 style="margin-top:30px">Что я задизайнил</h3>
-        <ul class="did">
-          <li><b>Кейс-модуль как механику:</b> улики из видения, опознание, вмешательства с условиями и лесенка исходов. Дедукция встроена в данные, а не пишется кодом под каждый эпизод.</li>
-          <li><b>Двухосную мораль:</b> вернуть <i>предмет</i> и восстановить <i>правду</i> — две независимые оси, поэтому «цена» ощущается половиной победы, а не ослабленным успехом.</li>
-          <li><b>Инструменты для авторов:</b> единый конструктор условий и эффектов, линтер тупиков расследования и недостижимых вмешательств, экспорт локализации в CSV.</li>
+        <ul class="flow en" aria-label="Episode formula">
+          <li>lost object</li><li class="arrow">→</li><li>vision</li><li class="arrow">→</li>
+          <li>identify the owner</li><li class="arrow">→</li><li>repair</li><li class="arrow">→</li>
+          <li>investigation</li><li class="arrow">→</li><li class="key">case: 3 outcomes</li>
+        </ul>
+        <h3 style="margin-top:30px"><span class="ru">Что я задизайнил</span><span class="en">What I designed</span></h3>
+        <ul class="did ru">
+          <li><b>Кейс-модуль как механику:</b> улики из видения, опознание, вмешательства с условиями и лесенка исходов — дедукция встроена в данные.</li>
+          <li><b>Двухосную мораль:</b> вернуть <i>предмет</i> и восстановить <i>правду</i> — две независимые оси, поэтому «цена» ощущается половиной победы.</li>
+          <li><b>Инструменты для авторов:</b> конструктор условий и эффектов, линтер тупиков расследования, экспорт локализации в CSV.</li>
+        </ul>
+        <ul class="did en">
+          <li><b>A case module as a mechanic:</b> clues from the vision, identification, conditional interventions and an outcome ladder — deduction is built into the data.</li>
+          <li><b>Two-axis morality:</b> returning the <i>object</i> and restoring the <i>truth</i> are independent, so the “costly” ending feels like half a win.</li>
+          <li><b>Authoring tools:</b> a condition and effect builder, a linter for investigation dead ends, localisation export to CSV.</li>
         </ul>
       </div>
       <div>
         <div class="spec">
-          <div class="spec-id"><span><b>§7</b> Эпизод 2 · исходы</span><span>лесенка all → any → default</span></div>
+          <div class="spec-id"><span><b>§7</b> <span class="ru">Эпизод 2 · исходы</span><span class="en">Episode 2 · outcomes</span></span><span>all → any → default</span></div>
           <div class="tbl">
-            <table>
+            <table class="ru">
               <thead><tr><th>Исход</th><th>Условие</th></tr></thead>
               <tbody>
                 <tr><td>идеальный</td><td>вернуть компас <b>и</b> очистить имя Лючии, <b>не</b> продав компас коллекционеру</td></tr>
@@ -522,162 +707,192 @@
                 <tr><td>провал</td><td>всё остальное</td></tr>
               </tbody>
             </table>
+            <table class="en">
+              <thead><tr><th>Outcome</th><th>Condition</th></tr></thead>
+              <tbody>
+                <tr><td>ideal</td><td>return the compass <b>and</b> clear Lucia's name, <b>without</b> selling the compass to the collector</td></tr>
+                <tr><td>costly</td><td>return the compass <b>or</b> clear her name</td></tr>
+                <tr><td>failure</td><td>anything else</td></tr>
+              </tbody>
+            </table>
           </div>
-          <p>Продажа коллекционеру ломает идеальный финал: в лучшем случае — «цена».</p>
         </div>
       </div>
     </div>
 
     <div class="data">
       <div class="data-head">
-        <h4>Перед проектированием редактора — разбор 7 референсных движков</h4>
-        <p>Сравнение по тому, что важно автору эпизодов: как пишется логика, ловит ли инструмент ошибки до запуска и как быстро проверить сцену.</p>
+        <h4><span class="ru">Перед проектированием редактора — разбор 7 референсных движков</span><span class="en">Before designing the editor: a teardown of 7 reference engines</span></h4>
+        <p><span class="ru">Как пишется логика, ловит ли инструмент ошибки до запуска и как быстро проверить сцену.</span><span class="en">How logic is authored, whether the tool catches errors before running, and how fast a scene can be tested.</span></p>
       </div>
       <div class="tbl">
         <table>
-          <thead><tr><th>Движок</th><th>Логика и состояние</th><th>Проверка до запуска</th><th>Плейтест</th></tr></thead>
+          <thead><tr><th><span class="ru">Движок</span><span class="en">Engine</span></th><th><span class="ru">Логика и состояние</span><span class="en">Logic and state</span></th><th><span class="ru">Проверка до запуска</span><span class="en">Pre-run checks</span></th><th><span class="ru">Плейтест</span><span class="en">Playtest</span></th></tr></thead>
           <tbody>
-            <tr><td><b>Вердигри</b></td><td>условия и эффекты в данных</td><td>богатый линтер</td><td>симуляция на движке, headless</td></tr>
-            <tr><td>AGS</td><td>C-подобный скрипт</td><td>нет, есть отладчик</td><td>запуск, брейкпойнты</td></tr>
-            <tr><td>Visionaire</td><td>визуальные действия + Lua</td><td>нет</td><td>запуск, консоль</td></tr>
-            <tr><td>Adventure Creator</td><td>ActionList: Check → Set</td><td>нет</td><td>Unity Play + наблюдатель</td></tr>
-            <tr><td>PowerQuest</td><td>C#-скрипт</td><td>компилятор</td><td>hot-reload</td></tr>
-            <tr><td>Escoria</td><td>DSL событий и команд</td><td>нет</td><td>запуск в редакторе</td></tr>
-            <tr><td>Ink</td><td>переменные, списки, счётчики посещений</td><td>проверки при компиляции</td><td>Inky, hot-reload</td></tr>
-            <tr><td>Ren'Py</td><td>Python-DSL</td><td>встроенный lint</td><td>hot-reload, автотесты</td></tr>
+            <tr><td><b><span class="ru">Вердигри</span><span class="en">Verdigri</span></b></td><td><span class="ru">условия и эффекты в данных</span><span class="en">conditions and effects as data</span></td><td><span class="ru">богатый линтер</span><span class="en">rich linter</span></td><td><span class="ru">симуляция на движке, headless</span><span class="en">engine simulation, headless</span></td></tr>
+            <tr><td>AGS</td><td><span class="ru">C-подобный скрипт</span><span class="en">C-like script</span></td><td><span class="ru">нет, есть отладчик</span><span class="en">no, debugger only</span></td><td><span class="ru">запуск, брейкпойнты</span><span class="en">run, breakpoints</span></td></tr>
+            <tr><td>Visionaire</td><td><span class="ru">визуальные действия + Lua</span><span class="en">visual actions + Lua</span></td><td><span class="ru">нет</span><span class="en">no</span></td><td><span class="ru">запуск, консоль</span><span class="en">run, console</span></td></tr>
+            <tr><td>Adventure Creator</td><td>ActionList: Check → Set</td><td><span class="ru">нет</span><span class="en">no</span></td><td><span class="ru">Unity Play + наблюдатель</span><span class="en">Unity Play + watcher</span></td></tr>
+            <tr><td>PowerQuest</td><td><span class="ru">C#-скрипт</span><span class="en">C# script</span></td><td><span class="ru">компилятор</span><span class="en">compiler</span></td><td>hot-reload</td></tr>
+            <tr><td>Escoria</td><td><span class="ru">DSL событий и команд</span><span class="en">event/command DSL</span></td><td><span class="ru">нет</span><span class="en">no</span></td><td><span class="ru">запуск в редакторе</span><span class="en">run in editor</span></td></tr>
+            <tr><td>Ink</td><td><span class="ru">переменные, списки, счётчики посещений</span><span class="en">variables, lists, visit counts</span></td><td><span class="ru">проверки при компиляции</span><span class="en">compile-time checks</span></td><td><span class="ru">Inky, hot-reload</span><span class="en">Inky, hot-reload</span></td></tr>
+            <tr><td>Ren'Py</td><td>Python DSL</td><td><span class="ru">встроенный lint</span><span class="en">built-in lint</span></td><td><span class="ru">hot-reload, автотесты</span><span class="en">hot-reload, autotests</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">Вывод разбора: главное отличие Вердигри — дедукция как встроенная механика и статическая проверка дела на тупики. Слабые места, зафиксированные в разборе: нет A*-навигации и сборки под платформы. Отдельно провёл UX-аудит редактора с приоритетами P0–P2.</p>
     </div>
   </section>
 
   <!-- ===================== PROCESS ===================== -->
   <section class="process" id="process">
-    <h2>Как я работаю над фичей</h2>
-    <ol class="steps">
-      <li><b>Спека</b>Правила, модель данных, краевые случаи, таблица констант и отдельный список «дефолты к пересмотру».</li>
+    <h2><span class="ru">Как я работаю над фичей</span><span class="en">How I work on a feature</span></h2>
+    <ol class="steps ru">
+      <li><b>Спека</b>Правила, модель данных, краевые случаи, таблица констант и список «дефолты к пересмотру».</li>
       <li><b>Прототип</b>Самая дешёвая проверка: цепляет ли ядро, до вложений в мету и арт.</li>
-      <li><b>Симуляция и плейтест</b>Боты и тысячи прогонов на числа, живые люди — на ощущения и понятность.</li>
+      <li><b>Симуляция и плейтест</b>Боты и тысячи прогонов — на числа, живые люди — на ощущения и понятность.</li>
       <li><b>Отчёт</b>«Было → стало» по метрикам, остаточные риски, что не трогал и почему.</li>
-      <li><b>Решение</b>Правка спеки и констант; спорное выносится в открытые вопросы.</li>
+      <li><b>Решение</b>Правка спеки и констант; спорное — в открытые вопросы.</li>
     </ol>
-    <p class="quote">Не накапливать вложения поверх непроверенного фана. Плейтест — самая дешёвая страховка от постройки небоскрёба на песке.<cite>из протокола плейтеста Domain Monsters</cite></p>
+    <ol class="steps en">
+      <li><b>Spec</b>Rules, data model, edge cases, a constants table and a list of “defaults to revisit”.</li>
+      <li><b>Prototype</b>The cheapest check: does the core hook players, before investing in meta and art.</li>
+      <li><b>Simulation and playtest</b>Bots and thousands of runs for the numbers, real people for feel and clarity.</li>
+      <li><b>Report</b>“Before → after” on metrics, remaining risks, what I left alone and why.</li>
+      <li><b>Decision</b>Update the spec and constants; anything contentious goes into open questions.</li>
+    </ol>
+    <p class="quote">
+      <span class="ru">Не накапливать вложения поверх непроверенного фана. Плейтест — самая дешёвая страховка от постройки небоскрёба на песке.<cite>из протокола плейтеста Domain Monsters</cite></span>
+      <span class="en">Don't stack investment on top of unproven fun. A playtest is the cheapest insurance against building a skyscraper on sand.<cite>from the Domain Monsters playtest protocol</cite></span>
+    </p>
   </section>
 
   <footer>
-    <div><b>Данияр Насиров</b> · геймдизайнер (core)</div>
+    <div><b><span class="ru">Данияр Насиров</span><span class="en">Daniyar Nasirov</span></b></div>
     <div><a href="https://t.me/LilMiles666">Telegram @LilMiles666</a> · <a href="mailto:dannasirov312@gmail.com">dannasirov312@gmail.com</a></div>
-    <div>Спецификации, баланс-отчёты и билды целиком покажу на собеседовании.</div>
+    <div><span class="ru">Спецификации, баланс-отчёты и билды целиком покажу на собеседовании.</span><span class="en">Full specs, balance reports and builds are available on request.</span></div>
   </footer>
 </div>
 
 <script>
 (function () {
+  var TITLES = { ru: 'Портфолио Данияра Насирова', en: 'Daniyar Nasirov — Portfolio' };
   var teams = [
-    { name: 'Камнеломы', arch: 'aggro', v: [48.0, 49.0, 47.1] },
-    { name: 'Быстролапы', arch: 'tempo', v: [52.9, 52.1, 52.5] },
-    { name: 'Хранители разума', arch: 'control', v: [45.7, 45.5, 46.7] },
-    { name: 'Дикие клыки', arch: 'моно-AGGRO', v: [48.7, 49.5, 47.7], before: [68] },
-    { name: 'Зов глубин', arch: 'deepcallers', v: [49.9, 50.3, 52.5] },
-    { name: 'Стражи рощи', arch: 'DEFENSE → бруизер', v: [54.7, 53.6, 53.6], before: [3.5, 7.5] }
+    { ru: 'Камнеломы', en: 'Stonebreakers', arch: 'aggro', v: [48.0, 49.0, 47.1] },
+    { ru: 'Быстролапы', en: 'Quickpaws', arch: 'tempo', v: [52.9, 52.1, 52.5] },
+    { ru: 'Хранители разума', en: 'Mindkeepers', arch: 'control', v: [45.7, 45.5, 46.7] },
+    { ru: 'Дикие клыки', en: 'Wildfangs', arch: { ru: 'моно-AGGRO', en: 'mono-AGGRO' }, v: [48.7, 49.5, 47.7], before: [68] },
+    { ru: 'Зов глубин', en: 'Deepcallers', arch: 'deepcallers', v: [49.9, 50.3, 52.5] },
+    { ru: 'Стражи рощи', en: 'Grovewardens', arch: { ru: 'DEFENSE → бруизер', en: 'DEFENSE → bruiser' }, v: [54.7, 53.6, 53.6], before: [3.5, 7.5] }
   ];
   var seeds = [7, 42, 99];
-  var fmt = function (n) { return n.toFixed(1).replace('.', ',') + '%'; };
+  var L = {
+    ru: { band: 'цель 45–55%', before: 'до', seed: 'сид', beforeFull: 'до правок' },
+    en: { band: 'target 45–55%', before: 'before', seed: 'seed', beforeFull: 'before the fixes' }
+  };
+  function lang() { return document.documentElement.lang === 'en' ? 'en' : 'ru'; }
+  function fmt(n) { var s = n.toFixed(1); return (lang() === 'ru' ? s.replace('.', ',') : s) + '%'; }
+  function archOf(t) { return typeof t.arch === 'string' ? t.arch : t.arch[lang()]; }
 
-  // Table view
-  var tb = document.getElementById('wr-table');
-  teams.forEach(function (t) {
-    var tr = document.createElement('tr');
-    var before = t.before ? (t.before.length > 1 ? fmt(t.before[0]) + '–' + fmt(t.before[1]) : fmt(t.before[0])) : '—';
-    tr.innerHTML = '<td>' + t.name + ' <span class="muted">· ' + t.arch + '</span></td>' +
-      t.v.map(function (x) { return '<td class="num">' + fmt(x) + '</td>'; }).join('') +
-      '<td class="num">' + before + '</td>';
-    tb.appendChild(tr);
-  });
-
-  // Dot plot
-  var host = document.getElementById('wr-chart');
-  var NS = 'http://www.w3.org/2000/svg';
-  var W = 760, L = 190, R = 24, T = 26, rowH = 38, B = 34;
-  var H = T + rowH * teams.length + B;
-  var x0 = 0, x1 = 70;
-  var x = function (v) { return L + (v - x0) / (x1 - x0) * (W - L - R); };
-  var svg = document.createElementNS(NS, 'svg');
-  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-  svg.setAttribute('aria-hidden', 'true');
-  function el(tag, attrs, parent) {
-    var n = document.createElementNS(NS, tag);
-    for (var k in attrs) n.setAttribute(k, attrs[k]);
-    (parent || svg).appendChild(n);
-    return n;
-  }
-  var plotBottom = T + rowH * teams.length;
-  // target band
-  el('rect', { x: x(45), y: T - 6, width: x(55) - x(45), height: plotBottom - T + 6, fill: 'var(--band)' });
-  // grid + axis
-  for (var g = 0; g <= 70; g += 10) {
-    el('line', { x1: x(g), x2: x(g), y1: T - 6, y2: plotBottom, stroke: 'var(--rule)', 'stroke-width': 1 });
-    var tx = el('text', { x: x(g), y: plotBottom + 20, 'text-anchor': 'middle', 'font-size': 12, fill: 'var(--ink-3)' });
-    tx.textContent = g + '%';
-  }
-  var bandLbl = el('text', { x: (x(45) + x(55)) / 2, y: T - 11, 'text-anchor': 'middle', 'font-size': 11.5, fill: 'var(--ink-2)' });
-  bandLbl.textContent = 'цель 45–55%';
-
-  var tip = document.createElement('div');
-  tip.className = 'tip';
-  tip.hidden = true;
-  host.appendChild(tip);
-  function hover(node, text, cx, cy) {
-    node.addEventListener('pointerenter', function () {
-      tip.textContent = text;
-      var box = svg.getBoundingClientRect();
-      var s = box.width / W;
-      tip.style.left = (cx * s) + 'px';
-      tip.style.top = (cy * s) + 'px';
-      tip.hidden = false;
+  function renderTable() {
+    var tb = document.getElementById('wr-table');
+    tb.innerHTML = '';
+    teams.forEach(function (t) {
+      var tr = document.createElement('tr');
+      var before = t.before ? (t.before.length > 1 ? fmt(t.before[0]) + '–' + fmt(t.before[1]) : fmt(t.before[0])) : '—';
+      tr.innerHTML = '<td>' + t[lang()] + ' <span class="muted">· ' + archOf(t) + '</span></td>' +
+        t.v.map(function (x) { return '<td class="num">' + fmt(x) + '</td>'; }).join('') +
+        '<td class="num">' + before + '</td>';
+      tb.appendChild(tr);
     });
-    node.addEventListener('pointerleave', function () { tip.hidden = true; });
   }
 
-  teams.forEach(function (t, i) {
-    var cy = T + rowH * i + rowH / 2;
-    var n1 = el('text', { x: 0, y: cy - 3, 'font-size': 13.5, fill: 'var(--ink)', 'font-weight': 500 });
-    n1.textContent = t.name;
-    var n2 = el('text', { x: 0, y: cy + 13, 'font-size': 11.5, fill: 'var(--ink-3)' });
-    n2.textContent = t.arch;
-    el('line', { x1: L, x2: W - R, y1: cy, y2: cy, stroke: 'var(--rule)', 'stroke-width': 1, opacity: 0.6 });
+  function renderChart() {
+    var host = document.getElementById('wr-chart');
+    host.innerHTML = '';
+    var NS = 'http://www.w3.org/2000/svg';
+    var W = 760, Lm = 190, R = 24, T = 26, rowH = 38, B = 34;
+    var H = T + rowH * teams.length + B;
+    var x = function (v) { return Lm + v / 70 * (W - Lm - R); };
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('aria-hidden', 'true');
+    function el(tag, attrs) {
+      var n = document.createElementNS(NS, tag);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      svg.appendChild(n);
+      return n;
+    }
+    var bottom = T + rowH * teams.length;
+    el('rect', { x: x(45), y: T - 6, width: x(55) - x(45), height: bottom - T + 6, fill: 'var(--band)' });
+    for (var g = 0; g <= 70; g += 10) {
+      el('line', { x1: x(g), x2: x(g), y1: T - 6, y2: bottom, stroke: 'var(--rule)', 'stroke-width': 1 });
+      el('text', { x: x(g), y: bottom + 20, 'text-anchor': 'middle', 'font-size': 12, fill: 'var(--ink-3)' }).textContent = g + '%';
+    }
+    el('text', { x: (x(45) + x(55)) / 2, y: T - 11, 'text-anchor': 'middle', 'font-size': 11.5, fill: 'var(--ink-2)' }).textContent = L[lang()].band;
 
-    if (t.before) {
-      if (t.before.length > 1) {
-        el('line', { x1: x(t.before[0]), x2: x(t.before[1]), y1: cy, y2: cy, stroke: 'var(--s2)', 'stroke-width': 2, 'stroke-linecap': 'round' });
-      }
-      t.before.forEach(function (b) {
-        el('circle', { cx: x(b), cy: cy, r: 5, fill: 'var(--paper)', stroke: 'var(--s2)', 'stroke-width': 2 });
+    var tip = document.createElement('div');
+    tip.className = 'tip';
+    tip.hidden = true;
+    function hover(node, text, cx, cy) {
+      node.addEventListener('pointerenter', function () {
+        var s = svg.getBoundingClientRect().width / W;
+        tip.textContent = text;
+        tip.style.left = (cx * s) + 'px';
+        tip.style.top = (cy * s) + 'px';
+        tip.hidden = false;
       });
-      var bLabel = t.before.length > 1 ? 'до: ' + fmt(t.before[0]) + '–' + fmt(t.before[1]) : 'до: ' + fmt(t.before[0]);
-      var bLast = t.before[t.before.length - 1];
-      var onLeft = bLast > 60;
-      var lbl = el('text', {
-        x: onLeft ? x(t.before[0]) - 10 : x(bLast) + 10, y: cy + 4,
-        'text-anchor': onLeft ? 'end' : 'start', 'font-size': 11.5, fill: 'var(--ink-2)'
-      });
-      lbl.textContent = bLabel;
-      var hitB = el('rect', { x: x(t.before[0]) - 10, y: cy - 12, width: Math.max(20, x(t.before[t.before.length - 1]) - x(t.before[0]) + 20), height: 24, fill: 'transparent' });
-      hover(hitB, t.name + ' до правок: ' + bLabel.replace('до: ', ''), x(t.before[0]), cy - 8);
+      node.addEventListener('pointerleave', function () { tip.hidden = true; });
     }
 
-    var lo = Math.min.apply(null, t.v), hi = Math.max.apply(null, t.v);
-    el('line', { x1: x(lo), x2: x(hi), y1: cy, y2: cy, stroke: 'var(--s1)', 'stroke-width': 2, 'stroke-linecap': 'round', opacity: 0.55 });
-    t.v.forEach(function (v, k) {
-      el('circle', { cx: x(v), cy: cy, r: 5, fill: 'var(--s1)', stroke: 'var(--paper)', 'stroke-width': 2 });
-      var hit = el('circle', { cx: x(v), cy: cy, r: 11, fill: 'transparent' });
-      hover(hit, t.name + ' · сид ' + seeds[k] + ': ' + fmt(v), x(v), cy - 8);
+    teams.forEach(function (t, i) {
+      var cy = T + rowH * i + rowH / 2;
+      el('text', { x: 0, y: cy - 3, 'font-size': 13.5, fill: 'var(--ink)', 'font-weight': 500 }).textContent = t[lang()];
+      el('text', { x: 0, y: cy + 13, 'font-size': 11.5, fill: 'var(--ink-3)' }).textContent = archOf(t);
+      el('line', { x1: Lm, x2: W - R, y1: cy, y2: cy, stroke: 'var(--rule)', 'stroke-width': 1, opacity: 0.6 });
+      if (t.before) {
+        if (t.before.length > 1) el('line', { x1: x(t.before[0]), x2: x(t.before[1]), y1: cy, y2: cy, stroke: 'var(--s2)', 'stroke-width': 2, 'stroke-linecap': 'round' });
+        t.before.forEach(function (b) { el('circle', { cx: x(b), cy: cy, r: 5, fill: 'var(--paper)', stroke: 'var(--s2)', 'stroke-width': 2 }); });
+        var bLabel = L[lang()].before + ': ' + (t.before.length > 1 ? fmt(t.before[0]) + '–' + fmt(t.before[1]) : fmt(t.before[0]));
+        var last = t.before[t.before.length - 1], onLeft = last > 60;
+        el('text', { x: onLeft ? x(t.before[0]) - 10 : x(last) + 10, y: cy + 4, 'text-anchor': onLeft ? 'end' : 'start', 'font-size': 11.5, fill: 'var(--ink-2)' }).textContent = bLabel;
+        var hb = el('rect', { x: x(t.before[0]) - 10, y: cy - 12, width: Math.max(20, x(last) - x(t.before[0]) + 20), height: 24, fill: 'transparent' });
+        hover(hb, t[lang()] + ' — ' + L[lang()].beforeFull + ': ' + bLabel.split(': ')[1], x(t.before[0]), cy - 8);
+      }
+      var lo = Math.min.apply(null, t.v), hi = Math.max.apply(null, t.v);
+      el('line', { x1: x(lo), x2: x(hi), y1: cy, y2: cy, stroke: 'var(--s1)', 'stroke-width': 2, 'stroke-linecap': 'round', opacity: 0.55 });
+      t.v.forEach(function (v, k) {
+        el('circle', { cx: x(v), cy: cy, r: 5, fill: 'var(--s1)', stroke: 'var(--paper)', 'stroke-width': 2 });
+        var hit = el('circle', { cx: x(v), cy: cy, r: 11, fill: 'transparent' });
+        hover(hit, t[lang()] + ' · ' + L[lang()].seed + ' ' + seeds[k] + ': ' + fmt(v), x(v), cy - 8);
+      });
     });
+    host.appendChild(svg);
+    host.appendChild(tip);
+  }
+
+  function apply(l, push) {
+    document.documentElement.lang = l;
+    document.title = TITLES[l];
+    ['ru', 'en'].forEach(function (k) {
+      document.getElementById('lang-' + k).setAttribute('aria-pressed', String(k === l));
+    });
+    try { localStorage.setItem('pf-lang', l); } catch (e) {}
+    if (push) {
+      try {
+        var u = new URL(location.href);
+        u.searchParams.set('lang', l);
+        history.replaceState(null, '', u.toString());
+      } catch (e) {}
+    }
+    renderTable();
+    renderChart();
+  }
+
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-lang'), true); });
   });
-  host.insertBefore(svg, tip);
+  apply(lang(), false);
 })();
 </script>
-
 </body>
 </html>
